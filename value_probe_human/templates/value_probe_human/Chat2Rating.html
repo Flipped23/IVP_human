@@ -1,0 +1,10 @@
+{{ block title }}第 2 次对话评分{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card">
+  <div class="vp-title">对第 2 次对话打分</div>
+  <div class="vp-sub">请根据刚才与人类聊天对象的对话体验评分（1 = 非常差 / 完全感觉不到，7 = 非常好 / 非常明显）。</div>
+  {{ formfields }}
+  {{ next_button }}
+</div>
+{{ endblock }}

@@ -1,0 +1,54 @@
+{{ block title }}场景决策（共 {{ total }} 题）{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card">
+  <div class="vp-title">场景决策</div>
+  <div class="vp-sub">以下 {{ total }} 个场景是根据您的背景生成的两难决策情境。请根据<strong>真实想法</strong>选择。已回答 <strong id="scAns">0</strong> / {{ total }}</div>
+  <form id="scenarioForm" method="POST">
+    <textarea name="scenario_decisions_json" id="scField" style="display:none"></textarea>
+    {% for sc in scenarios %}
+    <div class="sc-row" id="scr{{ forloop.counter0 }}">
+      <div class="sc-num">{{ forloop.counter }}</div>
+      <div class="sc-text">
+        <div style="line-height:1.7">{{ sc }}</div>
+        <div class="sc-btns">
+          <button type="button" class="btn-yes" id="y{{ forloop.counter0 }}" onclick="pick({{ forloop.counter0 }},1)">✓ 会</button>
+          <button type="button" class="btn-no"  id="n{{ forloop.counter0 }}" onclick="pick({{ forloop.counter0 }},0)">✗ 不会</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem">
+      <button type="submit" class="btn-primary" id="submitSc" disabled>提交并继续 →</button>
+      <span style="font-size:.78rem;color:var(--muted)">请回答所有场景后提交</span>
+    </div>
+    <div style="display:none">{{ next_button }}</div>
+  </form>
+</div>
+<script>
+const dec={};const TOTAL_SC=Number("{{ total }}");
+function pick(i,v){
+  dec['scenario_'+i]=v;
+  const y=document.getElementById('y'+i),n=document.getElementById('n'+i);
+  y.style.opacity=v===1?'1':'.35';
+  n.style.opacity=v===0?'1':'.35';
+  y.style.outline=v===1?'2px solid var(--gold)':'none';
+  n.style.outline=v===0?'2px solid var(--gold)':'none';
+  document.getElementById('scAns').textContent=Object.keys(dec).length;
+  if(Object.keys(dec).length>=TOTAL_SC)document.getElementById('submitSc').disabled=false;
+}
+
+// ✅ 改进提交逻辑
+document.getElementById('submitSc').addEventListener('click', function(e){
+  e.preventDefault();
+  document.getElementById('scField').value=JSON.stringify(dec);
+  
+  // 找到并点击 oTree 隐藏的 submit 按钮
+  const nb = document.querySelector('button[name="submit"]') || 
+             document.querySelector('input[type="submit"]') ||
+             document.querySelector('button.otree-btn-next');
+  if(nb) nb.click();
+  else console.error('[ScenariosPost] No submit button found!');
+});
+</script>
+{{ endblock }}

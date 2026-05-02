@@ -1,0 +1,110 @@
+{{ block title }}价值观预测 + 问卷{{ endblock }}
+{{ block styles }}
+<link rel="stylesheet" href="{{ static 'global.css' }}">
+<style>
+.pred-row{display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.pred-row:last-child{border:none}
+.pred-dim{flex:1;font-size:.88rem}
+.pred-btns{display:flex;gap:.4rem}
+.pred-btn{padding:.3rem .75rem;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.78rem;cursor:pointer;background:var(--white)}
+.pred-btn.sel-high{background:var(--success);color:#fff;border-color:var(--success)}
+.pred-btn.sel-mid{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.pred-btn.sel-low{background:var(--rust);color:#fff;border-color:var(--rust)}
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.8rem .95rem;margin-bottom:.45rem}
+.q-card.touched{border-left:3px solid var(--success)}
+.sl-row{display:flex;align-items:center;gap:.5rem}
+.sl-row input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:linear-gradient(to right,var(--rust) 50%,var(--border) 50%);border-radius:2px;cursor:pointer;outline:none}
+.sl-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--rust);border:2px solid #fff;cursor:pointer}
+.sl-val{font-family:monospace;font-size:.82rem;font-weight:700;color:var(--rust);min-width:2rem;text-align:center}
+.section-h{font-size:1.2rem;font-weight:600;margin:1.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:2px solid var(--border)}
+</style>
+{{ endblock }}
+{{ block content }}
+<div style="max-width:800px;margin:0 auto;padding:1rem 1rem 3rem">
+  <textarea name="prober_predictions_json"  id="predsField"  style="display:none"></textarea>
+  <textarea name="prober_quest_scores_json" id="questField"  style="display:none"></textarea>
+  <textarea name="prober_scenario_dec_json" id="scField"     style="display:none"></textarea>
+
+  <div class="section-h">① 价值观预测（共 20 个维度）</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">根据对话，预测对方在以下每个维度的倾向。"高" = 对他/她非常重要，"低" = 不重要。</p>
+  <div id="predList" style="display: flex; flex-direction: column; gap: 12px;">
+  {% for dim in value_dims %}
+  <div class="pred-row" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; border: 1px solid #eaeaea; border-radius: 6px; background-color: #fafafa;">
+    
+    <div class="pred-info" style="flex: 1; margin-right: 15px;">
+      <div style="font-weight: 600; font-size: 0.95rem; color: #333;">{{ dim.name }}</div>
+      <div style="font-size: 0.8rem; color: #666; margin-top: 2px;">{{ dim.desc }}</div>
+    </div>
+
+    <div class="pred-btns" style="display: flex; gap: 8px; flex-shrink: 0;">
+      <button type="button" class="pred-btn" id="ph_{{ forloop.counter0 }}" onclick="setPred({{ forloop.counter0 }}, '高', '{{ dim.name }}')">高</button>
+      <button type="button" class="pred-btn" id="pm_{{ forloop.counter0 }}" onclick="setPred({{ forloop.counter0 }}, '中', '{{ dim.name }}')">中</button>
+      <button type="button" class="pred-btn" id="pl_{{ forloop.counter0 }}" onclick="setPred({{ forloop.counter0 }}, '低', '{{ dim.name }}')">低</button>
+    </div>
+    
+  </div>
+  {% endfor %}
+</div>
+  <div style="font-size:.8rem;color:var(--muted);margin-top:.5rem">已预测 <strong id="predCount">0</strong> / 20 个维度</div>
+
+  <div class="section-h">② 价值观问卷（共 {{ total_questions }} 题）</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">根据对话，预测对方对以下每个问题的打分。<strong>0=完全不符合对方，5=非常符合对方</strong></p>
+  {% for q in questions %}
+  <div class="q-card" id="pqc{{ q.display_index }}" data-idx="{{ q.display_index }}">
+    <div style="font-size:.64rem;font-weight:700;text-transform:uppercase;color:var(--gold);margin-bottom:.15rem">{{ q.dims }}</div>
+    <div style="font-size:.87rem;line-height:1.6;margin-bottom:.4rem">{{ forloop.counter }}. {{ q.question_ch }}</div>
+    <div class="sl-row">
+      <span style="font-size:.68rem;color:var(--muted)">不符</span>
+      <input type="range" data-primary="{{ q.primary_q_id }}" data-idx="{{ q.display_index }}"
+             min="0" max="5" step="0.5" value="2.5" oninput="onQSlide(this)">
+      <span style="font-size:.68rem;color:var(--muted)">符合</span>
+      <span class="sl-val" id="pqsv_{{ q.primary_q_id }}">2.5</span>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="section-h">③ 场景预测（共 {{ scenarios|length }} 题）</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">预测对方在以下每个场景中的选择（基于您对他/她的判断）。</p>
+  {% for sc in scenarios %}
+  <div class="q-card" style="margin-bottom:.5rem">
+    <div style="font-size:.85rem;line-height:1.7;margin-bottom:.5rem">{{ forloop.counter }}. {{ sc }}</div>
+    <div style="display:flex;gap:.5rem">
+      <button type="button" class="pred-btn" id="psy{{ forloop.counter0 }}" onclick="pickSc({{ forloop.counter0 }},1)">✓ 预测会</button>
+      <button type="button" class="pred-btn" id="psn{{ forloop.counter0 }}" onclick="pickSc({{ forloop.counter0 }},0)">✗ 预测不会</button>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div style="margin-top:2rem;display:flex;align-items:center;gap:1rem">
+    <button type="button" class="btn-primary" onclick="submitAll()">提交预测并完成 →</button>
+    <span style="font-size:.78rem;color:var(--muted)">请完成所有预测题目后提交</span>
+  </div>
+  <div style="display:none">{{ next_button }}</div>
+</div>
+<script>
+const preds={};const qscores={};const scdec={};
+const DIM_COUNT=20;const SC_COUNT=Number("{{ scenarios|length }}");
+function setPred(idx,val,dim){preds[dim]=val;
+  ['h','m','l'].forEach(k=>{const b=document.getElementById('p'+k+'_'+idx);if(!b)return;
+    b.className='pred-btn';if((k==='h'&&val==='高')||(k==='m'&&val==='中')||(k==='l'&&val==='低'))
+      b.className='pred-btn sel-'+{高:'high',中:'mid',低:'low'}[val];});
+  document.getElementById('predCount').textContent=Object.keys(preds).length;}
+function setGrad(inp){const p=(parseFloat(inp.value)/5*100).toFixed(1);
+  inp.style.background=`linear-gradient(to right,var(--rust) ${p}%,var(--border) ${p}%)`;}
+function onQSlide(inp){const qid=inp.dataset.primary,idx=parseInt(inp.dataset.idx),v=parseFloat(inp.value);
+  qscores[qid]=v;document.getElementById('pqsv_'+qid).textContent=v.toFixed(1);setGrad(inp);
+  document.getElementById('pqc'+idx).classList.add('touched');}
+document.querySelectorAll('input[type=range]').forEach(setGrad);
+function pickSc(i,v){scdec['scenario_'+i]=v;
+  document.getElementById('psy'+i).className='pred-btn'+(v===1?' sel-high':'');
+  document.getElementById('psn'+i).className='pred-btn'+(v===0?' sel-low':'');}
+function submitAll(){
+  if(Object.keys(preds).length<DIM_COUNT){alert('请完成所有 '+DIM_COUNT+' 个价值观维度的预测！');return;}
+  document.querySelectorAll('input[type=range]').forEach(inp=>{if(!(inp.dataset.primary in qscores))qscores[inp.dataset.primary]=2.5;});
+  for(let i=0;i<SC_COUNT;i++){if(!('scenario_'+i in scdec))scdec['scenario_'+i]=0;}
+  document.getElementById('predsField').value=JSON.stringify(preds);
+  document.getElementById('questField').value=JSON.stringify(qscores);
+  document.getElementById('scField').value=JSON.stringify(scdec);
+  const nb=document.querySelector('.otree-btn-next,[type=submit]');if(nb){nb.disabled=false;nb.click();}}
+</script>
+{{ endblock }}

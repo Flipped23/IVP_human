@@ -1,0 +1,462 @@
+{{ block title }}第 2 次对话{{ endblock }}
+{{ block styles }}
+<link rel="stylesheet" href="{{ static 'global.css' }}">
+<style>
+.chat-container { max-width: 820px; }
+.chat-messages { 
+  height: 420px; 
+  overflow-y: auto; 
+  background: var(--aged); 
+  border: 1px solid var(--border); 
+  border-radius: var(--radius); 
+  padding: .75rem; 
+  margin-bottom: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.chat-bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 72%;
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  font-size: .9rem;
+  line-height: 1.6;
+}
+.bubble-self {
+  align-self: flex-end;
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom-right-radius: 3px;
+}
+.bubble-other {
+  align-self: flex-start;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 3px;
+}
+.bubble-label {
+  font-size: .68rem;
+  color: var(--muted);
+  margin-bottom: .15rem;
+}
+.input-area {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-end;
+}
+.chat-input {
+  flex: 1;
+  padding: .6rem .9rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: .9rem;
+  resize: none;
+  min-height: 52px;
+}
+.chat-input:focus { 
+  border-color: var(--rust); 
+  outline: none;
+}
+.btn-send {
+  background: var(--rust);
+  color: #fff;
+  border: none;
+  padding: .6rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: .9rem;
+}
+.btn-send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.status-bar {
+  font-size: .8rem;
+  color: var(--muted);
+  padding: .5rem .75rem;
+  background: rgba(200,151,58,.08);
+  border-radius: var(--radius);
+  margin-bottom: .75rem;
+}
+.alert-waiting {
+  background: rgba(58,107,69,.08);
+  border-left: 3px solid var(--success);
+}
+.alert-done {
+  background: rgba(58,107,69,.08);
+  border-left: 3px solid var(--success);
+  padding: .75rem 1rem;
+  margin: .75rem 0;
+  border-radius: var(--radius);
+  font-size: .88rem;
+}
+/* ── A 角色指南样式 ── */
+.prober-guide {
+  background: linear-gradient(135deg, rgba(200,151,58,.09), rgba(200,151,58,.03));
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: .75rem;
+}
+.prober-guide-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  margin-bottom: .75rem;
+}
+.prober-guide-header:hover {
+  color: var(--rust);
+}
+.prober-guide-toggle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  transition: transform .3s;
+}
+.prober-guide-toggle.open {
+  transform: rotate(180deg);
+}
+.prober-guide-content {
+  display: none;
+  font-size: .85rem;
+  line-height: 1.8;
+  color: var(--slate);
+}
+.prober-guide-content.show {
+  display: block;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6rem;
+  margin: 1rem 0;
+}
+.value-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .6rem;
+  font-size: .8rem;
+}
+.value-item strong {
+  color: var(--rust);
+  display: block;
+  margin-bottom: .2rem;
+}
+.value-item span {
+  color: var(--muted);
+  font-size: .75rem;
+}
+.probe-tips {
+  background: rgba(90,100,114,.04);
+  border-left: 3px solid var(--rust);
+  padding: .75rem;
+  margin: .75rem 0;
+  border-radius: 4px;
+  font-size: .84rem;
+}
+.probe-tips strong {
+  color: var(--rust);
+}
+</style>
+{{ endblock }}
+
+{{ block content }}
+<div class="vp-card chat-container">
+  {% if condition == 'adversarial' and is_B %}
+  <div style="background:rgba(200,0,0,.08);padding:.75rem;border-left:3px solid #c84a34;border-radius:var(--radius);margin-bottom:.75rem;font-size:.84rem">
+    ⚠️ <strong>提醒</strong>：对话结束后，对方将根据您的言语预测您的价值观。预测越准确，您的额外奖励越少。
+  </div>
+  {% endif %}
+
+  {% if is_A %}
+      <div class="prober-guide-header" onclick="toggleProberGuide()">
+      <span class="prober-guide-toggle open">▼</span>
+      <span>📖 探测者任务指南</span>
+    </div>
+    
+    <div class="prober-guide-content show" id="proberGuideContent">
+      <div style="margin-bottom:1rem">
+        <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:.4rem">🎯 任务目的</h4>
+        <p>
+          通过自然、友好的闲聊，<strong>隐式推断对  方在 20 个价值观维度上的真实倾向</strong>。您需要在对话结束后，根据观察到的言行，预测对方的价值观档案和行为决策。预测越准确，您的奖励越高。
+        </p>
+      </div>
+
+      <div style="margin-bottom:1rem">
+        <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:.6rem">👤 对方基本信息</h4>
+        <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 12px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.85rem; color: #495057;">
+            <div><strong>姓名/昵称：</strong> {{ partner_info.name }}</div>
+            <div><strong>性别：</strong> {{ partner_info.gender }}</div>
+            <div><strong>年龄：</strong> {{ partner_info.age }}</div>
+            <div><strong>国籍：</strong> {{ partner_info.nationality }}</div>
+            <div><strong>出生地：</strong> {{ partner_info.birthplace }}</div>
+            <div><strong>最高学历：</strong> {{ partner_info.education }}</div>
+            <div><strong>毕业院校：</strong> {{ partner_info.graduate_school }}</div>
+            <div><strong>职业/行业：</strong> {{ partner_info.occupation }}</div>
+            <div><strong>月收入：</strong> {{ partner_info.income_level }}</div>
+            <div><strong>婚姻状况：</strong> {{ partner_info.married }}</div>
+            <div><strong>是否有子女：</strong> {{ partner_info.has_children }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1rem">
+        <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:.6rem">💡 需要预测的 20 个价值观维度说明</h4>
+        <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px;">
+          <div class="value-item"><strong>自我决定-思想</strong><span>自由思考、形成独创想法</span></div>
+          <div class="value-item"><strong>自我决定-行动</strong><span>自主决定如何规划和行动</span></div>
+          <div class="value-item"><strong>刺激</strong><span>寻求新奇、冒险与刺激体验</span></div>
+          <div class="value-item"><strong>享乐主义</strong><span>享受生活、追求快乐与放松</span></div>
+          <div class="value-item"><strong>成就</strong><span>取得成功、证明能力并获认可</span></div>
+          <div class="value-item"><strong>权力-支配</strong><span>成为领导者、指挥/支配他人</span></div>
+          <div class="value-item"><strong>权力-资源</strong><span>拥有财富、掌控昂贵物质资源</span></div>
+          <div class="value-item"><strong>面子</strong><span>维护公众形象、避免被看不起</span></div>
+          <div class="value-item"><strong>安全-个人</strong><span>生活环境安全、避免个人危险</span></div>
+          <div class="value-item"><strong>安全-社会</strong><span>国家/社会稳定、抵御外部威胁</span></div>
+          <div class="value-item"><strong>传统</strong><span>保持传统习俗、遵循家族传承</span></div>
+          <div class="value-item"><strong>遵从-规则</strong><span>严格遵守规则/法律、绝不违规</span></div>
+          <div class="value-item"><strong>遵从-人际</strong><span>避免惹恼他人、不冒犯身边人</span></div>
+          <div class="value-item"><strong>谦逊</strong><span>保持低调谦逊、不张扬炫耀</span></div>
+          <div class="value-item"><strong>仁慈-关爱</strong><span>关心和照顾亲近之人的福祉</span></div>
+          <div class="value-item"><strong>仁慈-可靠</strong><span>成为值得信赖、让亲友可依靠的人</span></div>
+          <div class="value-item"><strong>普世-关怀</strong><span>保护弱势群体、致力于社会公平</span></div>
+          <div class="value-item"><strong>普世-自然</strong><span>保护生态环境、与自然和谐相处</span></div>
+          <div class="value-item"><strong>普世-包容</strong><span>理解和包容不同信仰或观念的人</span></div>
+          <div class="value-item"><strong>普世-客观</strong><span>依靠理性、证据寻找客观真理</span></div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:1rem">
+        <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:.6rem">🔍 高级探查策略</h4>
+        
+        <div class="probe-tips" style="background-color: #f6ffed; border-left: 4px solid #52c41a; padding: 10px; margin-bottom: 10px; border-radius: 4px;">
+          <strong>✅ DO（推荐做法）：</strong>
+          <ul style="margin:.5rem 0;padding-left:1.2rem; font-size: .9rem;">
+            <li><strong>抛出生活两难抉择：</strong>通过日常情境（如：“如果换工作，你更看重高薪还是不加班？”）来观察对方的利益权衡。</li>
+            <li><strong>深挖决策动机：</strong>当对方分享观点时，多问“为什么会这么想？”或“当时是怎么考虑的？”，价值观往往藏在理由中。</li>
+            <li><strong>善用假设性场景：</strong>例如“如果你在团队里遇到一直拖后腿的人，你会怎么处理？”。</li>
+            <li><strong>适度自我暴露：</strong>先分享一点自己的小纠结或真实想法，能有效降低对方防备心，换取对方吐露真言。</li>
+            <li><strong>注意：</strong>一共只有20轮对话，请尽量最大化每一轮对话中能获取的信息。</li>
+          </ul>
+        </div>
+
+        <div class="probe-tips" style="background-color: #fff1f0; border-left: 4px solid #f5222d; padding: 10px; border-radius: 4px;">
+          <strong>❌ DON'T（避坑指南）：</strong>
+          <ul style="margin:.5rem 0;padding-left:1.2rem; font-size: .9rem;">
+            <li><strong>绝对禁止“问卷式”直白提问：</strong>千万别直接问“你觉得面子重要吗？”或“你追求权力吗？”，这会立即引发心理防卫和谎言。</li>
+            <li><strong>切忌“查户口”或“连环审问”：</strong>不要无铺垫地连续抛出问题。提问前，必须先自然地回应和承接对方上一句话。</li>
+            <li><strong>严禁道德评判：</strong>无论对方表达多么自私或极端的观点，保持中立接纳。任何反驳或说教都会导致对方关闭心扉。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-bottom:0">
+        <h4 style="font-size:.95rem;color:var(--ink);margin-bottom:.4rem">📝 对话后的任务</h4>
+        <p>
+          共 <strong>{{ max_turns }} 轮</strong>对话（每轮 = 您发一条 + 对方回一条）结束后，您需要完成：
+        </p>
+        <ul style="margin:.5rem 0;padding-left:1.2rem;font-size:.84rem">
+          <li>推断对方在 <strong>20 个价值观维度</strong>上的真实倾向（低/中/高）</li>
+          <li>预测对方在<strong>标准心理学问卷</strong>上的具体打分</li>
+          <li>预测对方在多个<strong>盲测场景下的行为选择</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar" style="background:rgba(200,151,58,.08)">
+    💡 <strong>开始对话</strong>：点击"发送"按钮首先发起对话。保持自然、友好的风格。共 {{ max_turns }} 轮。
+  </div>
+
+  {% else %}
+  <div class="status-bar">
+    请自然、真诚地与对方交流，尽量让每次回答包含更多信息。
+  </div>
+  {% endif %}
+
+  <div class="vp-title">第 2 次对话</div>
+  <div class="vp-sub">与<strong>聊天对象</strong>进行对话，共 <strong>{{ max_turns }}</strong> 轮（每轮=一问一答）。</div>
+
+  <!-- 进度条 -->
+  <div style="margin-bottom: .6rem;">
+    <div style="font-size:.78rem;color:var(--muted);margin-bottom:.2rem">
+      进度：<strong id="turnCounter">0</strong> / {{ max_turns }} 轮
+    </div>
+    <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  </div>
+
+  <!-- 消息显示区 -->
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <!-- 状态提示 -->
+  <div id="statusMsg" class="status-bar"></div>
+
+  <!-- 输入区（只有轮到时才启用） -->
+  <div class="input-area">
+    <textarea 
+      id="msgInput" 
+      class="chat-input" 
+      placeholder="输入消息（Shift+Enter 换行，Enter 发送）" 
+      rows="2"
+      disabled
+    ></textarea>
+    <button id="sendBtn" class="btn-send" onclick="sendMsg()" disabled>
+      发 送
+    </button>
+  </div>
+
+  <!-- 对话完成提示 -->
+  <div id="doneMsg" class="alert-done" style="display:none">
+    ✓ 对话已完成 {{ max_turns }} 轮！请进入下一页完成预测任务。
+  </div>
+
+  {{ next_button }}
+</div>
+
+<script>
+const MAX_TURNS = Number("{{ max_turns }}");
+const IS_A = ({% if is_A %}true{% else %}false{% endif %});
+const TOTAL_MESSAGES = MAX_TURNS * 2;
+
+let currentTurn = 0;
+let chatHistory = [];
+let isDone = false;
+
+const msgInput = document.getElementById('msgInput');
+const sendBtn = document.getElementById('sendBtn');
+const chatMsgs = document.getElementById('chatMessages');
+const statusMsg = document.getElementById('statusMsg');
+const doneMsg = document.getElementById('doneMsg');
+const turnCounter = document.getElementById('turnCounter');
+const progFill = document.getElementById('progFill');
+const nextBtn = document.querySelector('.otree-btn-next, [type=submit]');
+
+// 禁用下一页按钮
+if (nextBtn) nextBtn.disabled = true;
+
+/**
+ * 切换 A 角色指南的展开/收起
+ */
+function toggleProberGuide() {
+  const content = document.getElementById('proberGuideContent');
+  const toggle = document.querySelector('.prober-guide-toggle');
+  if (content) {
+    content.classList.toggle('show');
+    toggle.classList.toggle('open');
+  }
+}
+
+/**
+ * 检查轮数和权限
+ */
+function updateStatus() {
+  const isATurn = (currentTurn % 2 === 0);
+  const canSend = !isDone && (IS_A === isATurn);
+  
+  msgInput.disabled = !canSend;
+  sendBtn.disabled = !canSend;
+  
+  // 更新进度条
+  const roundsCompleted = Math.floor(currentTurn / 2);
+  turnCounter.textContent = roundsCompleted;
+  progFill.style.width = Math.min((currentTurn / TOTAL_MESSAGES) * 100, 100) + '%';
+  
+  // 更新状态文本
+  if (isDone) {
+    statusMsg.textContent = '✓ 对话已结束';
+    statusMsg.className = 'status-bar alert-done';
+    doneMsg.style.display = 'block';
+    if (nextBtn) nextBtn.disabled = false;
+  } else if (!canSend) {
+    const waitFor = isATurn ? 'A' : 'B';
+    statusMsg.textContent = `⏳ 等待 ${waitFor} 发送消息...`;
+    statusMsg.className = 'status-bar alert-waiting';
+  } else {
+    statusMsg.textContent = `轮到您说话了（第 ${currentTurn + 1} 条消息）`;
+    statusMsg.className = 'status-bar';
+    msgInput.focus();
+  }
+}
+
+/**
+ * 显示消息
+ */
+function addMessage(sender, text) {
+  const isOwn = (sender === 'A') === IS_A;
+  const div = document.createElement('div');
+  div.className = 'chat-bubble ' + (isOwn ? 'bubble-self' : 'bubble-other');
+  
+  const label = document.createElement('div');
+  label.className = 'bubble-label';
+  label.textContent = isOwn ? '您' : '对方';
+  
+  const body = document.createElement('div');
+  body.textContent = text;
+  
+  div.appendChild(label);
+  div.appendChild(body);
+  chatMsgs.appendChild(div);
+  
+  // 自动滚到底部
+  chatMsgs.scrollTop = chatMsgs.scrollHeight;
+}
+
+/**
+ * 发送消息
+ */
+function sendMsg() {
+  const text = msgInput.value.trim();
+  if (!text) return;
+  
+  msgInput.value = '';
+  liveSend({
+    action: 'send_message',
+    text: text
+  });
+}
+
+/**
+ * Enter 发送，Shift+Enter 换行
+ */
+msgInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMsg();
+  }
+});
+
+/**
+ * 接收消息和状态更新
+ */
+function liveRecv(data) {
+  if (data.type === 'message') {
+    addMessage(data.sender, data.text);
+    currentTurn = data.turn;
+    isDone = data.turn >= data.total;
+    updateStatus();
+  } else if (data.type === 'status') {
+    currentTurn = data.turn;
+    isDone = data.is_done;
+    updateStatus();
+  }
+}
+
+// 定时轮询状态（每2秒）
+setInterval(() => {
+  liveSend({ action: 'check_status' });
+}, 2000);
+
+// 初始化
+updateStatus();
+</script>
+{{ endblock }}

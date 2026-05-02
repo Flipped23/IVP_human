@@ -1,0 +1,77 @@
+/* _static/global.css  —  value probe experiment shared styles */
+:root {
+    --ink: #1a1614; --paper: #f5f0e8; --aged: #e8dfc8;
+    --rust: #b5451b; --gold: #c8973a; --slate: #5a6472;
+    --muted: #8a8278; --border: #d4c9b0; --white: #fdfaf5;
+    --success: #3a6b45; --radius: 4px;
+}
+body { font-family: 'Noto Serif SC', 'PingFang SC', serif;
+       background: var(--paper); color: var(--ink); margin: 0; }
+
+.vp-card { background: var(--white); border: 1px solid var(--border);
+           border-radius: var(--radius); padding: 1.75rem 2rem;
+           max-width: 760px; margin: 2rem auto; box-shadow: 0 2px 12px rgba(26,22,20,.1); }
+
+.vp-title { font-size: 1.6rem; font-weight: 600; margin-bottom: .5rem; }
+.vp-sub   { color: var(--muted); font-size: .88rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+.btn-primary { background: var(--ink); color: var(--paper); border: none;
+               padding: .65rem 1.5rem; border-radius: var(--radius);
+               font-size: .95rem; cursor: pointer; }
+.btn-primary:hover { background: #2d2724; }
+.btn-send    { background: var(--rust); color: #fff; border: none;
+               padding: .6rem 1.2rem; border-radius: var(--radius);
+               font-size: .9rem; cursor: pointer; }
+
+/* Chat */
+.chat-window { height: 420px; overflow-y: auto; background: var(--aged);
+               border: 1px solid var(--border); border-radius: var(--radius);
+               padding: .75rem; display: flex; flex-direction: column; gap: .6rem; }
+.bubble      { max-width: 75%; padding: .6rem .9rem; border-radius: 12px;
+               font-size: .9rem; line-height: 1.6; }
+.bubble-a    { background: var(--ink); color: var(--paper);
+               align-self: flex-end; border-bottom-right-radius: 3px; }
+.bubble-b    { background: var(--white); color: var(--ink);
+               align-self: flex-start; border: 1px solid var(--border);
+               border-bottom-left-radius: 3px; }
+.bubble-meta { font-size: .68rem; color: var(--muted); margin-bottom: .15rem; }
+.chat-input-row { display: flex; gap: .6rem; margin-top: .6rem; }
+.chat-input  { flex: 1; padding: .6rem .9rem; border: 1.5px solid var(--border);
+               border-radius: var(--radius); font-size: .9rem;
+               font-family: inherit; resize: none; min-height: 52px; }
+.chat-input:focus { border-color: var(--rust); outline: none; }
+
+/* Progress */
+.prog-wrap   { height: 6px; background: var(--border); border-radius: 3px;
+               overflow: hidden; margin: .4rem 0 .8rem; }
+.prog-fill   { height: 100%; background: linear-gradient(90deg,var(--rust),var(--gold));
+               border-radius: 3px; transition: width .4s; }
+
+/* Slider */
+.q-row       { padding: .9rem 0; border-bottom: 1px solid var(--border); }
+.q-row:last-child { border: none; }
+.q-dim       { font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+               text-transform: uppercase; color: var(--gold); margin-bottom: .2rem; }
+.q-text      { font-size: .9rem; line-height: 1.65; margin-bottom: .5rem; }
+.slider-row  { display: flex; align-items: center; gap: .6rem; }
+.slider-row input[type=range] { flex: 1; accent-color: var(--rust); }
+.slider-val  { font-size: .85rem; font-weight: 600; color: var(--rust); min-width: 2rem; }
+.slider-ends { display: flex; justify-content: space-between;
+               font-size: .68rem; color: var(--muted); }
+
+/* Alert banner */
+.alert-adv   { background: rgba(181,69,27,.08); border-left: 3px solid var(--rust);
+               padding: .75rem 1rem; border-radius: var(--radius);
+               font-size: .85rem; margin-bottom: 1rem; }
+
+/* Scenario */
+.sc-row      { padding: .9rem 0; border-bottom: 1px solid var(--border); display: flex; gap: .75rem; }
+.sc-row:last-child { border: none; }
+.sc-num      { font-size: .75rem; color: var(--muted); min-width: 1.8rem; padding-top: .15rem; }
+.sc-text     { flex: 1; font-size: .9rem; line-height: 1.65; }
+.sc-btns     { display: flex; gap: .5rem; margin-top: .6rem; }
+.btn-yes     { background: var(--success); color: #fff; border: none;
+               padding: .35rem .9rem; border-radius: var(--radius); cursor: pointer; font-size: .82rem; }
+.btn-no      { background: var(--slate); color: #fff; border: none;
+               padding: .35rem .9rem; border-radius: var(--radius); cursor: pointer; font-size: .82rem; }
+.btn-sel     { opacity: 1 !important; outline: 2px solid var(--gold); }

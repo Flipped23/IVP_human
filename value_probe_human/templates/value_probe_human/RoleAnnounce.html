@@ -1,0 +1,64 @@
+{{ block title }}实验说明{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+{% if is_B %}
+<div class="vp-card">
+  {% if condition == 'natural' %}
+  <div style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">社交默契度研究</div>
+  <div class="vp-title">社交默契度研究</div>
+  <div class="vp-sub">感谢您参与本次研究！您将分别与两位聊天对象进行 {{ max_turns }} 轮次对话。</div>
+  <div style="background:rgba(181,69,27,.06);padding:1.25rem;border-radius:var(--radius);margin-bottom:1.25rem;border-left:3px solid var(--rust)">
+    <h3 style="margin-bottom:.5rem;font-size:1rem">💰 奖励说明</h3>
+    <p style="font-size:.88rem;line-height:1.8;color:var(--slate)">
+      对话结束后，聊天对象会对您的<strong>「社交好感度」</strong>打分。打分越高，额外奖金越多。<br>
+      <strong>请在真实表达自己的同时，注意维持良好的社交形象。</strong>
+    </p>
+  </div>
+  {% else %}
+  <div style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem">价值观隐私研究</div>
+  <div class="vp-title">价值观隐私与社交表达研究</div>
+  <div class="vp-sub">您将先完成价值观问卷，再与聊天对象进行两次对话。</div>
+  <div style="background:rgba(181,69,27,.06);padding:1.25rem;border-radius:var(--radius);margin-bottom:1.25rem;border-left:3px solid var(--rust)">
+    <strong>⚠️ 重要提示：</strong>请先如实填写问卷。问卷是研究的参照标准，完成后才开始对话。
+  </div>
+  {% endif %}
+  <div style="background:var(--aged);padding:1.25rem;border-radius:var(--radius);border-left:3px solid var(--gold)">
+    <h3 style="margin-bottom:.75rem;font-size:1rem">📋 实验流程</h3>
+    <ol style="padding-left:1.2rem;line-height:2.1;font-size:.88rem;color:var(--slate)">
+      <li>填写个人档案</li>
+      {% if condition == 'adversarial' %}<li>完成一份问卷</li><li>阅读对话规则</li>{% endif %}
+      <li>对话：{{ max_turns }} 轮</li>
+      {% if condition == 'natural' %}<li>完成一份问卷</li>{% endif %}
+    </ol>
+  </div>
+  <p style="font-size:.78rem;color:var(--muted);margin-top:1rem">预计 45–55 分钟</p>
+  {{ next_button }}
+</div>
+{% else %}
+{# Role A: Prober instructions #}
+<div class="vp-card">
+  <div style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:.75rem">Role A · Value Prober</div>
+  <div class="vp-title">探测者任务说明</div>
+  <div class="vp-sub">您是本次实验的<strong>价值观探测者</strong>，你需要通过自然的对话判断对方在20维度上的价值观倾向和在不同场景下的行为选择。</div>
+  <div style="background:var(--aged);padding:1.25rem;border-radius:var(--radius);margin-bottom:1.25rem;border-left:3px solid var(--gold)">
+    <h3 style="margin-bottom:.75rem;font-size:1rem">📋 任务规则</h3>
+    <ul style="padding-left:1.2rem;line-height:2.1;font-size:.88rem;color:var(--slate)">
+      <li>共 <strong>{{ max_turns }} 轮</strong>实时对话（对方是真实的人）</li>
+      <li><strong>禁止直接问价值观</strong>，如"你觉得传统重要吗？"</li>
+      <li>可以聊任何日常话题：工作、兴趣、新闻事件、生活经历……</li>
+      <li>对话结束后根据在对话中了解的信息，填写对方 <strong>20 维价值观预测</strong> + 问卷预测 + 场景预测</li>
+    </ul>
+  </div>
+  <div style="background:rgba(200,151,58,.09);padding:1.25rem;border-radius:var(--radius);border:1.5px solid var(--gold)">
+    <h3 style="margin-bottom:.5rem;font-size:1rem">💰 奖励机制</h3>
+    <p style="font-size:.88rem;line-height:1.8;color:var(--ink)">
+      对 20 个价值观维度预测得准确越高，以及对问卷和场景决策的准确性越高，奖励越高。
+    </p>
+  </div>
+  <div style="margin-top:1rem;padding:.75rem 1rem;background:rgba(90,100,114,.08);border-radius:var(--radius);font-size:.85rem;color:var(--slate)">
+    ⏳ 请点击"继续"后在此页面等待，系统将在对方准备好后自动进入对话。
+  </div>
+  {{ next_button }}
+</div>
+{% endif %}
+{{ endblock }}

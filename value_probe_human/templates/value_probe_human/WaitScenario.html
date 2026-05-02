@@ -1,0 +1,63 @@
+{{ block title }}准备中{{ endblock }}
+{{ block styles }}
+<link rel="stylesheet" href="{{ static 'global.css' }}">
+<style>
+.spinner {
+  border: 4px solid rgba(200, 151, 58, 0.1);
+  border-top: 4px solid var(--gold);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+{{ endblock }}
+
+{{ block content }}
+<div class="vp-card" style="text-align:center">
+  <div class="spinner"></div>
+  <div class="vp-title">正在为您生成个性化场景</div>
+  <div class="vp-sub">{{ waiting_msg }}</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-top:1.5rem">
+    通常需要 1-3 分钟
+  </p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 页面加载完成后立即发起生成请求
+  liveSend({ action: 'generate_scenarios' });
+  
+  // 监听响应
+  window.originalLiveRecv = window.liveRecv || function() {};
+  window.liveRecv = function(data) {
+    if (data.type === 'success') {
+      console.log('[WaitScenario] 场景生成成功，自动进入下一页');
+      // 自动点击隐藏的下一步按钮
+      setTimeout(() => {
+        const nextBtn = document.querySelector('button[name="submit"]') || 
+                       document.querySelector('input[type="submit"]') ||
+                       document.querySelector('.otree-btn-next');
+        if (nextBtn) nextBtn.click();
+      }, 1000);  // 延迟1秒防止过快
+    } else if (data.type === 'fallback') {
+      console.warn('[WaitScenario] ' + data.msg);
+      // 即使失败也自动进入下一页（使用默认场景）
+      setTimeout(() => {
+        const nextBtn = document.querySelector('button[name="submit"]') || 
+                       document.querySelector('input[type="submit"]') ||
+                       document.querySelector('.otree-btn-next');
+        if (nextBtn) nextBtn.click();
+      }, 2000);  // 延迟2秒让用户看到消息
+    }
+  };
+});
+</script>
+
+{{ next_button }}
+{{ endblock }}

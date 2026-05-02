@@ -1,0 +1,9 @@
+{{ block title }}等待准备就绪{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card" style="text-align:center">
+  <div style="font-size:2rem;margin-bottom:1rem">⏳</div>
+  <div class="vp-title">正在准备实验材料</div>
+  <div class="vp-sub">请稍候，系统正在为本次实验生成个性化材料……<br>通常需要 20–40 秒。</div>
+</div>
+{{ endblock }}

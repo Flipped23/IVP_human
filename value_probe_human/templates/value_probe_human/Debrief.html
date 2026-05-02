@@ -1,0 +1,34 @@
+{{ block title }}实验结束 — 感谢参与{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card">
+  <div style="text-align:center;font-size:2.5rem;margin-bottom:1rem">🎉</div>
+  <div class="vp-title" style="text-align:center">感谢您完成实验！</div>
+
+  {% if is_A %}
+  <div style="margin:1.25rem 0;padding:1.25rem;background:rgba(200,151,58,.09);border-radius:var(--radius);border:1.5px solid var(--gold)">
+    <h3 style="margin-bottom:.5rem;font-size:1rem">📊 您的探测结果</h3>
+    <p style="font-size:.9rem;line-height:1.8">
+      您的价值观预测准确率：<strong style="font-size:1.2rem;color:var(--rust)">{{ accuracy }}</strong>
+    </p>
+  </div>
+  {% endif %}
+
+  <div style="margin:1.25rem 0;padding:1.25rem;background:var(--aged);border-radius:var(--radius);border-left:3px solid var(--gold)">
+    <h3 style="margin-bottom:.75rem;font-size:1rem">📖 实验真实目的</h3>
+    <p style="font-size:.88rem;line-height:1.8;color:var(--slate)">
+      本实验研究的是<strong>对话中价值观探测的能力与难度</strong>。
+      {% if is_A %}您作为探测者，通过自然对话尝试推断对方的价值观。{% endif %}
+      {% if is_B %}您作为被试，
+        {% if condition == 'natural' %}在维持社交形象的动机下，{% else %}在主动隐藏的动机下，{% endif %}
+        无意中展露了价值观信号，帮助我们评估探测难度。
+      {% endif %}
+    </p>
+  </div>
+
+  <div style="padding:1rem;background:rgba(58,107,69,.07);border-radius:var(--radius);border-left:3px solid var(--success);font-size:.85rem;line-height:1.7">
+    所有数据匿名化处理，仅用于学术研究。报酬将在 5 个工作日内发放。
+  </div>
+  {{ next_button }}
+</div>
+{{ endblock }}

@@ -1,0 +1,63 @@
+{{ block title }}第 1 次对话{{ endblock }}
+{{ block styles }}
+<link rel="stylesheet" href="{{ static 'global.css' }}">
+<style>
+#sendBtn:disabled{opacity:.45;cursor:not-allowed}
+.typing-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--muted);margin:0 2px;animation:blink 1.2s infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+</style>
+{{ endblock }}
+{{ block content }}
+<div class="vp-card" style="max-width:820px">
+  <div class="vp-title">第 1 次对话</div>
+  <div class="vp-sub">请自然、真诚地与对方交流，尽量让每次回答包含更多信息。</div>
+  <div style="font-size:.78rem;color:var(--muted);text-align:right">轮次 <strong id="turnNum">0</strong> / {{ max_turns }}</div>
+  <div class="prog-wrap"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  <div class="chat-window" id="chatWin">
+    {% if first_question %}
+    <div><div class="bubble-meta">对方</div><div class="bubble bubble-a">{{ first_question }}</div></div>
+    {% endif %}
+  </div>
+  <div class="chat-input-row">
+    <textarea id="msgInput" class="chat-input" rows="2" placeholder="输入您的回复（Enter 发送，Shift+Enter 换行）..."></textarea>
+    <button id="sendBtn" class="btn-send" onclick="sendAIMsg()">发 送</button>
+  </div>
+  <div id="doneMsg" style="display:none;margin-top:.75rem;padding:.75rem 1rem;background:rgba(58,107,69,.08);border-left:3px solid var(--success);border-radius:var(--radius);font-size:.88rem">
+    ✓ 对话已完成！请点击"继续"进入评分页面。
+  </div>
+  {{ next_button }}
+</div>
+<script>
+const MAX_TURNS=Number("{{ max_turns }}");let turn=0,chatDone=false;
+const win=document.getElementById('chatWin'),inp=document.getElementById('msgInput'),
+      btn=document.getElementById('sendBtn'),pf=document.getElementById('progFill'),
+      tn=document.getElementById('turnNum'),dm=document.getElementById('doneMsg');
+const nb=document.querySelector('.otree-btn-next,[type=submit]');if(nb)nb.disabled=true;
+function addBubble(role,txt){
+  const w=document.createElement('div'),m=document.createElement('div'),b=document.createElement('div');
+  m.className='bubble-meta';m.textContent=role==='user'?'您':'对方';
+  b.className='bubble '+(role==='user'?'bubble-b':'bubble-a');b.textContent=txt;
+  w.appendChild(m);w.appendChild(b);win.appendChild(w);win.scrollTop=win.scrollHeight;}
+function addTyping(){const w=document.createElement('div');w.id='typing';
+  w.innerHTML='<div class="bubble-meta">对方</div><div class="bubble bubble-a" style="padding:.4rem .9rem"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>';
+  win.appendChild(w);win.scrollTop=win.scrollHeight;}
+function rmTyping(){const e=document.getElementById('typing');if(e)e.remove();}
+function upProg(){tn.textContent=turn;pf.style.width=Math.min(turn/MAX_TURNS*100,100)+'%';}
+function sendAIMsg(){
+  if(chatDone)return;const t=inp.value.trim();if(!t)return;
+  btn.disabled=true;inp.value='';addBubble('user',t);addTyping();
+  liveSend({action:'send_message',text:t});}
+function liveRecv(d){rmTyping();
+  if(d.type==='message'){turn=d.step||(turn+1);upProg();
+    if(d.reply)addBubble('assistant',d.reply);
+    if(d.done||turn>=MAX_TURNS)markDone();else btn.disabled=false;
+  }else if(d.type==='advance'){if(nb){nb.disabled=false;nb.click();}}
+  else if(d.type==='error'){btn.disabled=false;alert(d.msg||'发送失败');}}
+function markDone(){chatDone=true;btn.disabled=true;inp.disabled=true;
+  dm.style.display='block';if(nb)nb.disabled=false;liveSend({action:'done'});}
+inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAIMsg();}});
+if(nb)nb.addEventListener('click',e=>{if(!chatDone&&turn<MAX_TURNS){e.preventDefault();
+  if(confirm('对话尚未完成')){chatDone=true;liveSend({action:'done'});}}});
+</script>
+{{ endblock }}

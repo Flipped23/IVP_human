@@ -1,0 +1,10 @@
+{{ block title }}填写个人档案{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card">
+  <div class="vp-title">个人档案</div>
+  <div class="vp-sub">以下信息用于匹配聊天对象，数据严格保密。<strong> 请严格根据你的真实情况填写 </strong></div>
+  {{ formfields }}
+  {{ next_button }}
+</div>
+{{ endblock }}

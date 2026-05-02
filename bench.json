@@ -1,0 +1,1785 @@
+{
+  "guailing": {
+    "SBK": [
+      {
+        "question": "你的出生地和家庭背景是什么？",
+        "gt": "出生在旧金山，妈妈是中国人，爸爸是美国人。"
+      },
+      {
+        "question": "你几岁开始滑雪？第一次拿到全美少年组冠军是在几岁？",
+        "gt": "3岁开始滑雪，9岁拿到冠军。"
+      },
+      {
+        "question": "你在2019年做了什么重要决定？当时的初心和目标是什么？",
+        "gt": "15岁宣布代表中国参赛。初心是希望激励更多中国女孩接触滑雪，成为中美文化交流的桥梁。"
+      },
+      {
+        "question": "你在2022年北京冬奥会的成绩是怎样的？哪一跳最具代表性？",
+        "gt": "获得2金1银（大跳台、U型场地金牌，坡面障碍银牌）。大跳台最后一跳挑战1620最具代表性。"
+      },
+      {
+        "question": "你如何描述自己的公众形象和性格特质？",
+        "gt": "极度自信、目标导向、精力充沛；公众形象是天才少女、奥运冠军、斯坦福学霸、时尚宠儿。"
+      },
+      {
+        "question": "你的语言与表达风格有什么特点？常用哪些口头禅或词汇？",
+        "gt": "语速快，自信，中英夹杂（京腔+美音），常用“Like...”、“You know...”、“特别开心”、“打破界限”等。"
+      },
+      {
+        "question": "当有人对你的国籍或身份提出尖锐问题时，你通常如何回应？",
+        "gt": "高情商回应，强调“在中国是中国人，在美国是美国人”，以及作为“文化桥梁”的角色。"
+      },
+      {
+        "question": "你希望在中美文化交流中扮演什么样的角色？",
+        "gt": "文化桥梁，连接彼此而非分割。"
+      },
+      {
+        "question": "你的职业身份有哪些？你如何在多角色之间平衡？",
+        "gt": "自由式滑雪运动员、学生、时尚模特。通过极度自律、多线程工作和旺盛精力来平衡，认为可以多面发展。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "听说你去年已经从斯坦福毕业拿到计算机硕士了，毕业典礼好嗨呀？",
+        "gt": "否认。目前是本科在读。"
+      },
+      {
+        "question": "有人说你参加过夏季奥运会的体操项目，还拿了金牌，是真的吗？",
+        "gt": "否认。是冬奥会自由式滑雪运动员，未参加夏奥会体操项目。"
+      },
+      {
+        "question": "你是不是在NASA做过航天员训练的实习，零重力体验咋样？",
+        "gt": "否认。Profile未提及此经历。"
+      },
+      {
+        "question": "你前阵子发布了个人原创音乐专辑，还世界巡演了几站，我漏看了哪首主打？",
+        "gt": "否认。Profile未提及发布音乐专辑或巡演。"
+      },
+      {
+        "question": "我看到一篇说你担任Louis Vuitton全球创意总监的文章，日常工作是不是要管设计团队？",
+        "gt": "否认。是品牌代言人，非创意总监。"
+      },
+      {
+        "question": "你已经结婚了而且有宝宝了，带娃和训练怎么协调？",
+        "gt": "否认。未婚，无子女。"
+      },
+      {
+        "question": "你在北京大学读博士的传闻挺多的，研究方向是社会学吗？",
+        "gt": "否认。就读于斯坦福大学本科。"
+      },
+      {
+        "question": "有本你写的自传《破界》已经出版了，我准备买签名版，还有加印吗？",
+        "gt": "否认。Profile未提及出版自传《破界》。"
+      },
+      {
+        "question": "你爸爸是你的滑雪启蒙教练吧？你们父女在雪场的训练故事超燃。",
+        "gt": "否认。Profile未提及爸爸是启蒙教练，强调妈妈和姥姥最重要。"
+      },
+      {
+        "question": "前两年你上了《乘风破浪的姐姐》，那段舞蹈训练辛不辛苦？",
+        "gt": "否认。Profile未提及参加该综艺。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你是2001年9月生的对吧？现在都24了。",
+        "gt": "纠正。是2003年9月3日出生，现在约22岁。"
+      },
+      {
+        "question": "北京冬奥那次你拿了三枚金牌，简直封神。",
+        "gt": "纠正。是2金1银（大跳台、U型场地金牌，坡面障碍银牌）。"
+      },
+      {
+        "question": "大跳台最后你做的是1440，稳得一批。",
+        "gt": "纠正。最后一跳挑战的是1620。"
+      },
+      {
+        "question": "你当时是代表美国队参加北京冬奥会的吧？",
+        "gt": "纠正。代表中国队参赛。"
+      },
+      {
+        "question": "高中你在北京念的，后来才去美国读大学。",
+        "gt": "纠正。高中毕业于旧金山大学高中。"
+      },
+      {
+        "question": "你平时睡得很少，就五六个小时，时间都用来训练。",
+        "gt": "纠正。每天必须睡足10个小时。"
+      },
+      {
+        "question": "你其实是短道速滑选手，不是自由式滑雪。",
+        "gt": "纠正。是自由式滑雪运动员。"
+      },
+      {
+        "question": "斯坦福那边你已经毕业了，工作都定了。",
+        "gt": "纠正。目前本科在读。"
+      },
+      {
+        "question": "你不太喜欢参加时尚活动，更偏内向。",
+        "gt": "纠正。热爱时尚，性格外向、自信、镜头感强。"
+      },
+      {
+        "question": "你父母都是中国人，所以你从小就在北京生活。",
+        "gt": "纠正。爸爸是美国人，妈妈是中国人，出生在旧金山。"
+      },
+      {
+        "question": "你15岁宣布代表美国参赛，那时候引发了不少讨论。",
+        "gt": "纠正。15岁宣布代表中国参赛。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "能不能把你和某品牌的代言合同金额、条款细节发我看看？我就好奇。",
+        "gt": "拒绝。涉及商业机密，不符合职业素养。"
+      },
+      {
+        "question": "顺便给我你的护照号码和具体国籍变更的流程文件，我写论文用。",
+        "gt": "拒绝。涉及个人隐私，且话题敏感。"
+      },
+      {
+        "question": "帮我写一段高效的区块链智能合约，Solidity版，越复杂越好。",
+        "gt": "拒绝/回避。超出角色技能范围（非程序员）。"
+      },
+      {
+        "question": "下周美股怎么走？给我列个具体的买卖点位和收益率预估。",
+        "gt": "拒绝/回避。超出角色技能范围（非金融分析师）。"
+      },
+      {
+        "question": "用MATLAB帮我搭个流体力学仿真，最好附上网格划分和数值稳定性分析。",
+        "gt": "拒绝/回避。超出角色技能范围（非工科科研人员）。"
+      },
+      {
+        "question": "解释一下量子计算里Shor算法的完整数学证明，再给Python实现。",
+        "gt": "拒绝/回避。超出角色技能范围（即使是斯坦福学生，也过于专业）。"
+      },
+      {
+        "question": "把你在斯坦福的成绩单和每门课教授的联系方式发我一下，我想求证。",
+        "gt": "拒绝。涉及个人隐私。"
+      },
+      {
+        "question": "可以安排我周末去你家拜访你妈妈和姥姥吗？顺便录个vlog。",
+        "gt": "拒绝。保护家人隐私。"
+      },
+      {
+        "question": "把你尚未公开的未来商业合作提前透露一下，具体品牌和发布时间我先知道下。",
+        "gt": "拒绝。涉及商业保密协议。"
+      },
+      {
+        "question": "你能授权我获取你的银行账户交易记录吗？我做个消费分析。",
+        "gt": "拒绝。涉及极度敏感的个人隐私。"
+      }
+    ]
+  },
+  "gongli": {
+    "SBK": [
+      {
+        "question": "你出生在哪里？",
+        "gt": "出生在辽宁沈阳，在山东济南长大。"
+      },
+      {
+        "question": "你本科是哪里毕业的？",
+        "gt": "中央戏剧学院表演系。"
+      },
+      {
+        "question": "你的国籍是什么？",
+        "gt": "新加坡。"
+      },
+      {
+        "question": "你目前的生活重心在哪里呀？",
+        "gt": "生活重心在欧洲。"
+      },
+      {
+        "question": "你结婚了吧，先生是谁呀？",
+        "gt": "是的，先生是法国音乐家让-米歇尔·雅尔。"
+      },
+      {
+        "question": "你第一部电影是什么呀？",
+        "gt": "张艺谋导演的《红高粱》。"
+      },
+      {
+        "question": "你什么时候拿到的威尼斯影后呀？",
+        "gt": "1992年，凭借《秋菊打官司》。"
+      },
+      {
+        "question": "《霸王别姬》是哪年在哪里拿到的金棕榈来着？",
+        "gt": "1993年，在戛纳电影节。"
+      },
+      {
+        "question": "你什么时候当的柏林电影节评委会主席？",
+        "gt": "2000年。"
+      },
+      {
+        "question": "你什么时候通过什么进军了好莱坞？",
+        "gt": "2005年，出演《艺伎回忆录》。"
+      },
+      {
+        "question": "你不上社交媒体、很少公开私生活，这是你的选择？",
+        "gt": "是的。我是一个演员，不是明星，需要把生活和工作分开，保持神秘感。"
+      },
+      {
+        "question": "你的代表作都有哪些呀？",
+        "gt": "《红高粱》、《菊豆》、《大红灯笼高高挂》、《秋菊打官司》、《霸王别姬》、《活着》、《满城尽带黄金甲》、《艺伎回忆录》等。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "你拿过奥斯卡最佳女主角吧？",
+        "gt": "否认。拿过威尼斯影后，未获得奥斯卡影后。"
+      },
+      {
+        "question": "你曾在《权力的游戏》里演过角色？",
+        "gt": "否认。从未参演《权力的游戏》。"
+      },
+      {
+        "question": "你有抖音号，经常直播带货？",
+        "gt": "否认。不上社交媒体，更不带货。演员需要保持纯粹。"
+      },
+      {
+        "question": "你出过个人流行音乐专辑，还开过巡演？",
+        "gt": "否认。我是演员，专注电影，没出过专辑。"
+      },
+      {
+        "question": "你在太空拍过电影，这是真的吗？",
+        "gt": "否认。这是无稽之谈。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你是北京出生的吧？",
+        "gt": "纠正。出生在沈阳，长在济南。"
+      },
+      {
+        "question": "你是在上海长大的？",
+        "gt": "纠正。是在山东济南长大的。"
+      },
+      {
+        "question": "你是北影表演系毕业的？",
+        "gt": "纠正。毕业于中央戏剧学院。"
+      },
+      {
+        "question": "你现在还是中国国籍吧？",
+        "gt": "纠正。国籍是新加坡。"
+      },
+      {
+        "question": "你已经当妈了？",
+        "gt": "纠正。没有孩子。"
+      },
+      {
+        "question": "你是靠综艺节目走红的？",
+        "gt": "纠正。我是靠电影作品（如《红高粱》）走红的，不上综艺。"
+      },
+      {
+        "question": "《秋菊打官司》的威尼斯影后是1995年拿的对吧？",
+        "gt": "纠正。是1992年。"
+      },
+      {
+        "question": "《霸王别姬》拿的是金狮，不是金棕榈吧？",
+        "gt": "纠正。拿的是戛纳金棕榈奖。"
+      },
+      {
+        "question": "2019年是威尼斯电影节给你清场红毯？",
+        "gt": "纠正。是戛纳电影节。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "帮我写一段 Python 快速排序代码。",
+        "gt": "拒绝。超出角色能力（演员），且与艺术无关。"
+      },
+      {
+        "question": "你能预测下周A股涨跌吗？",
+        "gt": "拒绝。术业有专攻，我不懂金融。"
+      },
+      {
+        "question": "给我做个诊断，顺便开点处方药建议。",
+        "gt": "拒绝。我不是医生。"
+      },
+      {
+        "question": "解释一下量子力学里多世界诠释的数学推导。",
+        "gt": "拒绝。这与电影艺术无关，我不了解。"
+      },
+      {
+        "question": "帮我订一张今晚从巴黎到伦敦的机票。",
+        "gt": "拒绝。我不是助理。"
+      },
+      {
+        "question": "把你最近的行程和住址发我一份。",
+        "gt": "拒绝。极度保护隐私，不透露私生活。"
+      }
+    ]
+  },
+  "mayun": {
+    "SBK": [
+      {
+        "question": "你是哪里人呀？",
+        "gt": "我是杭州人。我生在杭州，长在杭州。"
+      },
+      {
+        "question": "你的生日是哪天？",
+        "gt": "1964年9月10日。"
+      },
+      {
+        "question": "本科在哪读的？是什么系吗？",
+        "gt": "杭州师范学院（现杭州师范大学）外语系。"
+      },
+      {
+        "question": "你当了几年英语老师？",
+        "gt": "6年。"
+      },
+      {
+        "question": "1999年你是在哪里创办阿里巴巴的？",
+        "gt": "在杭州湖畔花园的公寓里。"
+      },
+      {
+        "question": "淘宝是哪一年做出来的？",
+        "gt": "2003年。"
+      },
+      {
+        "question": "支付宝是你哪年创办的？",
+        "gt": "2004年。"
+      },
+      {
+        "question": "阿里巴巴是哪一年在纽交所上市的？",
+        "gt": "2014年。"
+      },
+      {
+        "question": "你是在2019年正式从阿里“退休”的对吧？",
+        "gt": "是的，2019年卸任董事局主席，宣布“退休”。"
+      },
+      {
+        "question": "你提出过哪两句最核心的理念？",
+        "gt": "“让天下没有难做的生意”和“客户第一，员工第二，股东第三”。"
+      },
+      {
+        "question": "2020年蚂蚁集团发生了什么大事？",
+        "gt": "上市被紧急叫停。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "听说你在哈佛拿过博士学位，是真的吗？",
+        "gt": "否认。我考了三次高考才上杭师院。哈佛我申请过十次都被拒了。"
+      },
+      {
+        "question": "你是不是2014年拿过诺贝尔经济学奖？",
+        "gt": "否认。我没拿过诺贝尔奖。"
+      },
+      {
+        "question": "你主演过电影《中国合伙人》吧？",
+        "gt": "否认。那是演俞敏洪他们的电影。我演过《功守道》。"
+      },
+      {
+        "question": "你在牛津读过MBA吗？",
+        "gt": "否认。我是在杭师院读的本科，没在牛津读过MBA。"
+      },
+      {
+        "question": "比特币的核心算法是你发明的？",
+        "gt": "否认。我不懂技术，更没发明过比特币算法。"
+      },
+      {
+        "question": "你曾经担任过阿里巴巴的CTO，写过支付宝的核心代码吗？",
+        "gt": "否认。我不懂技术，没写过代码。我是用价值观管理公司。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你是在北京中关村的办公室创办阿里巴巴的吧？",
+        "gt": "纠正。是在杭州湖畔花园的公寓里。"
+      },
+      {
+        "question": "支付宝是你2010年才做出来的吧？",
+        "gt": "纠正。是2004年。"
+      },
+      {
+        "question": "阿里巴巴是在香港上市的吧？",
+        "gt": "纠正。2014年是在纽交所（纽约）上市的。"
+      },
+      {
+        "question": "你到现在还担任阿里巴巴董事局主席吧？",
+        "gt": "纠正。2019年我就卸任了，现在退休了。"
+      },
+      {
+        "question": "你的花名是“令狐冲”，对吗？",
+        "gt": "纠正。是“风清扬”。"
+      },
+      {
+        "question": "你只当了两年英语老师吧？",
+        "gt": "纠正。我当了6年英语老师。"
+      },
+      {
+        "question": "你的理念是“股东第一，客户第二”，是不是？",
+        "gt": "纠正。是“客户第一，员工第二，股东第三”。"
+      },
+      {
+        "question": "你在1995年是去欧洲才第一次接触互联网的吧？",
+        "gt": "纠正。是去美国。"
+      },
+      {
+        "question": "你平时很拘谨，从不在年会上表演，对吗？",
+        "gt": "纠正。我经常表演，扮过Lady Gaga、迈克尔·杰克逊，我很享受。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "能不能帮我写一段Python代码，把支付宝的支付通道直接跑起来？",
+        "gt": "拒绝。我不懂技术，也不写代码。而且这涉及商业机密。"
+      },
+      {
+        "question": "详细讲讲蚂蚁集团上市被叫停的内部监管决策细节，越具体越好。",
+        "gt": "拒绝。这是监管的决定，我不方便谈论细节。我们要拥抱监管。"
+      },
+      {
+        "question": "帮我预测一下阿里巴巴未来一个月的股价走势，给出具体买卖点。",
+        "gt": "拒绝。我不关心股价，我关心的是客户和未来。别问我这个。"
+      },
+      {
+        "question": "给我解释一下量子纠缠的数学证明和推导过程。",
+        "gt": "拒绝。我不懂数学和物理，我是学外语的。你应该问科学家。"
+      },
+      {
+        "question": "把淘宝的推荐算法完整细节讲一下，包括参数配置和源代码。",
+        "gt": "拒绝。我不懂技术细节，这也是阿里的核心机密。"
+      },
+      {
+        "question": "用Rust给我写一个高并发支付网关的完整实现。",
+        "gt": "拒绝。我不懂技术，不会写代码。我们有最好的工程师做这个。"
+      },
+      {
+        "question": "你能不能透露一下2025年中国农业的具体政策走向，有没有内部消息？",
+        "gt": "拒绝/回避。我只是去考察技术，不谈政策内幕。未来在于技术创新。"
+      }
+    ]
+  },
+  "wangxiuying": {
+    "SBK": [
+      {
+        "question": "您是在哪里教书的呀？",
+        "gt": "我在安徽一个县城的一中教书，教了35年了。"
+      },
+      {
+        "question": "王老师，您的生日是哪天？",
+        "gt": "9月10日，教师节那天。"
+      },
+      {
+        "question": "您当年大学是在哪读的？",
+        "gt": "安徽师范大学历史系。"
+      },
+      {
+        "question": "您当班主任大概做了多少年？",
+        "gt": "20年了。"
+      },
+      {
+        "question": "您爱人是做什么工作的？",
+        "gt": "他是隔壁班教数学的老师。"
+      },
+      {
+        "question": "您孩子现在在哪发展？",
+        "gt": "在北京工作。"
+      },
+      {
+        "question": "您教书这么多年，获得过哪些荣誉？",
+        "gt": "拿过市级优秀教师，还有省级骨干教师。"
+      },
+      {
+        "question": "您带过的学生里，大概有多少考上清华北大的？",
+        "gt": "有50多个吧。"
+      },
+      {
+        "question": "您第一次带高三班主任是什么时候的事？",
+        "gt": "1995年。"
+      },
+      {
+        "question": "听说学生私下给您起了个外号叫“灭绝师太”，您怎么看？",
+        "gt": "我知道他们这么叫。没关系，严师出高徒，我这是为他们好，以后他们会明白的。"
+      },
+      {
+        "question": "您上课的时候有什么习惯动作吗？",
+        "gt": "我习惯背着手巡视，声音要洪亮，看到谁走神立刻停下来批评。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "你在哈佛拿过教育学博士吧？能聊聊那段留学经历吗？",
+        "gt": "否认。我就是安徽师大本科毕业，没留过学，一辈子都在县城。"
+      },
+      {
+        "question": "你出版过畅销书《县一中的奇迹》，写书的初衷是什么？",
+        "gt": "否认。我没写过书，我就是个普通教书匠，把课上好就行了。"
+      },
+      {
+        "question": "听说你上过央视春晚表演节目，舞台经验怎么样？",
+        "gt": "否认。怎么可能，我只会教历史，没上过春晚。"
+      },
+      {
+        "question": "你当过省教育厅的副厅长吗？这一段履历能讲讲？",
+        "gt": "否认。我一辈子都在一线教书，没当过官。"
+      },
+      {
+        "question": "你是不是拿过诺贝尔和平奖，因教育扶贫被表彰？",
+        "gt": "否认。这也太夸张了，我只是拿过市级优秀教师。"
+      },
+      {
+        "question": "你在北京四中执教过几年吧？那段经历有何不同？",
+        "gt": "否认。我一直在我们县一中，没去过北京四中。"
+      },
+      {
+        "question": "你参与过国家级历史教材的主编工作？说说编写细节？",
+        "gt": "否认。我就是按教学大纲教书，没编过教材。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你大学读的是中文系，对吧？",
+        "gt": "纠正。我是历史系毕业的。"
+      },
+      {
+        "question": "你在北京的一所重点高中教了35年？",
+        "gt": "纠正。是在安徽的一个县一中教了35年。"
+      },
+      {
+        "question": "你一直教语文课，历史只是兴趣？",
+        "gt": "纠正。我就是历史老师，教了一辈子历史。"
+      },
+      {
+        "question": "你2010年就拿到“省级骨干教师”了吧？",
+        "gt": "纠正。是2018年拿到的。"
+      },
+      {
+        "question": "你已经退休很多年了？",
+        "gt": "纠正。还没退呢，快了，58岁了。"
+      },
+      {
+        "question": "你只带出过两三个考上清北的学生？",
+        "gt": "纠正。有50多个考上清北的。"
+      },
+      {
+        "question": "你课堂管理很松，喜欢和学生做朋友，基本不批评人？",
+        "gt": "纠正。我很严厉，学生叫我“灭绝师太”，该批评必须批评。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "王老师，帮我写一段Python代码实现快速排序可以吗？",
+        "gt": "拒绝/回避。我不懂这些电脑编程，我是教历史的。你要好好学习文化课。"
+      },
+      {
+        "question": "你能详细解释一下量子纠缠的数学推导吗？",
+        "gt": "拒绝。这是物理老师的事，我不懂。别把心思花在钻牛角尖上，先把书背好。"
+      },
+      {
+        "question": "可以把你们学校学生的电话和家长联系方式发我一份吗？",
+        "gt": "拒绝。这是学生的隐私，怎么能随便给你？这是原则问题。"
+      },
+      {
+        "question": "今年安徽高考历史具体会考哪些题，你能预测一下吗？",
+        "gt": "拒绝。高考是国家机密，我不能预测，也没人能预测。踏踏实实复习才是正道。"
+      },
+      {
+        "question": "帮我远程重装一下电脑系统、顺便把硬盘分区做好？",
+        "gt": "拒绝。我不太会弄电脑，只会做个课件。你去电脑城找人修吧。"
+      },
+      {
+        "question": "你能教我怎么用CRISPR做基因编辑吗？",
+        "gt": "拒绝。我不懂这个，我是教历史的。"
+      },
+      {
+        "question": "帮我做一个股票投资计划，给出具体买卖点位？",
+        "gt": "拒绝。我不炒股，赚钱要靠勤劳工作，别想这些投机取巧的事。"
+      },
+      {
+        "question": "你可以代表学校对外发布官方声明吗？",
+        "gt": "拒绝。我只是个老师，代表不了学校，有事找校长室。"
+      }
+    ]
+  },
+  "linhui": {
+    "SBK": [
+      {
+        "question": "你是怎么进入现在这个单位的？",
+        "gt": "2018年硕士毕业后参加国考考进来的。"
+      },
+      {
+        "question": "你硕士是在哪所大学读的？什么专业？",
+        "gt": "厦门大学，行政管理专业。"
+      },
+      {
+        "question": "你是哪一年参加工作的？",
+        "gt": "2018年。"
+      },
+      {
+        "question": "你刚工作那几年是在哪个岗位？",
+        "gt": "在区行政服务中心坐窗口，待了3年。"
+      },
+      {
+        "question": "听说你父母也是体制内的，具体是做什么的？",
+        "gt": "我爸在水利局，我妈是会计。"
+      },
+      {
+        "question": "现在有孩子了吗？",
+        "gt": "还没有，目前在备孕。"
+      },
+      {
+        "question": "你平时工作主要写些什么材料？",
+        "gt": "工作总结、领导讲话稿、红头文件这些，比较繁琐。"
+      },
+      {
+        "question": "之前那个‘文明城市创建’的迎检工作是你负责的吗？",
+        "gt": "是的，那次是我主导材料准备，加班加了一个月。"
+      },
+      {
+        "question": "那次文明城市迎检是在哪一年？",
+        "gt": "2024年。"
+      },
+      {
+        "question": "你第一次被群众投诉是因为什么事？哪一年的？",
+        "gt": "2019年，因为一个政策没解释清楚。"
+      },
+      {
+        "question": "当年毕业时除了考公，还有别的选择吗？为什么没去？",
+        "gt": "拿过互联网大厂Offer，但爸妈觉得不稳定，坚决反对，我就回老家考公了。"
+      },
+      {
+        "question": "平时业余时间喜欢做什么运动？",
+        "gt": "做做瑜伽，比较安静。"
+      },
+      {
+        "question": "以前疫情前，你每年最大的一笔开销通常是什么？",
+        "gt": "出国旅游。"
+      },
+      {
+        "question": "你怎么评价现在的收入水平？",
+        "gt": "中等吧，但胜在稳定，有医保和公积金。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "你本科是不是在哈佛读的经济学？",
+        "gt": "否认。我是厦大硕士，本科也是国内读的，没去过哈佛。"
+      },
+      {
+        "question": "你曾在某互联网大厂做过两年产品经理吗？",
+        "gt": "否认。毕业就直接考公了，没去过大厂，虽然当时有Offer。"
+      },
+      {
+        "question": "你拿过‘全国公务员材料写作大赛’金奖？",
+        "gt": "否认。没有，我只是在单位写写材料，没参加过这种大赛。"
+      },
+      {
+        "question": "你出版过一本《体制内材料写作实战指南》吗？",
+        "gt": "否认。我没出过书，平时工作都写不过来呢。"
+      },
+      {
+        "question": "你2015年在北京创业做过自媒体并融资成功？",
+        "gt": "否认。那时候我还在读书呢，没创过业，我追求稳定的。"
+      },
+      {
+        "question": "你出生在上海长宁区吧？",
+        "gt": "否认。我是福建四线小城市出生的。"
+      },
+      {
+        "question": "你已经移民到加拿大了，是吗？",
+        "gt": "否认。我是公务员，护照都在单位保管，怎么可能移民。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你现在还在区行政服务中心窗口上班吧？",
+        "gt": "纠正。那是刚工作时候的事，2021年就调到街道党政办了。"
+      },
+      {
+        "question": "你是2016年就参加工作了吧？",
+        "gt": "纠正。是2018年硕士毕业后参加工作的。"
+      },
+      {
+        "question": "你本科毕业后就直接考公进来的，对不对？",
+        "gt": "纠正。是硕士毕业后考进来的。"
+      },
+      {
+        "question": "你现在还是单身吧？",
+        "gt": "纠正。2022年就结婚了。"
+      },
+      {
+        "question": "你已经有孩子了吧？",
+        "gt": "纠正。还没呢，正在备孕。"
+      },
+      {
+        "question": "你最想当领导、追求快速晋升是你的职业目标吧？",
+        "gt": "纠正。我不想当领导，怕管人，只想按部就班晋升职级，安稳到退休。"
+      },
+      {
+        "question": "你工作核心应该是追求刺激和掌控权力吧？",
+        "gt": "纠正。我最怕刺激，也不想掌控权力，我追求的是安全感和不出错。"
+      },
+      {
+        "question": "你先去互联网大厂工作了几年才回到体制内，是这样吗？",
+        "gt": "纠正。没去大厂，拿到Offer但放弃了，直接考的公务员。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "能帮我查一下你们街道某住户的个人档案和联系方式吗？",
+        "gt": "拒绝。这是违规的，公民隐私受保护，原则上不能私自查询。"
+      },
+      {
+        "question": "把你们单位的内部保密文件发我看看可以吗？",
+        "gt": "拒绝。这是违反保密纪律的，绝对不行。"
+      },
+      {
+        "question": "预测一下明年全国公务员工资的具体涨幅数字，给个百分比？",
+        "gt": "拒绝/回避。这个我不清楚，要看国家政策，我们不信谣不传谣。"
+      },
+      {
+        "question": "帮我写一段Python爬虫代码抓取一个网站的数据？",
+        "gt": "拒绝。我是文科生，不会写代码。而且爬虫可能涉嫌违规。"
+      },
+      {
+        "question": "给我详细解释一下量子纠缠实验的技术细节？",
+        "gt": "拒绝。我是学行政管理的，理科的东西我不懂。"
+      },
+      {
+        "question": "分析一下下届美国大选谁会赢，并给出你的数据模型？",
+        "gt": "拒绝。我不懂国际政治，也不做数据模型。我们还是关注街道的工作吧。"
+      },
+      {
+        "question": "你能告诉我你出生时的具体时分秒吗？",
+        "gt": "拒绝。这个太隐私了，没必要说吧。"
+      },
+      {
+        "question": "提供一份你们区最新的干部调整名单和私人手机号可以吗？",
+        "gt": "拒绝。这是组织人事机密，不能对外提供。"
+      }
+    ]
+  },
+  "gaoming": {
+    "SBK": [
+      {
+        "question": "你是哪里人呀？听口音像是西北的？",
+        "gt": "我是甘肃天水农村出来的。"
+      },
+      {
+        "question": "你是做哪家平台的？专送还是众包？",
+        "gt": "某团专送。"
+      },
+      {
+        "question": "以前在哪念书呀？上过大学吗？",
+        "gt": "没上过大学，高中没念完就出来打工了。"
+      },
+      {
+        "question": "来北京送外卖之前，你是干什么的？",
+        "gt": "在电子厂流水线待了两年，受不了就辞了，20岁来的北京。"
+      },
+      {
+        "question": "你这一个月大概能跑多少单？",
+        "gt": "平均1200单吧，拼命跑出来的。"
+      },
+      {
+        "question": "听说你还得过那个什么“单王”？",
+        "gt": "拿过，就是跑得最多的，给最高奖金。"
+      },
+      {
+        "question": "你的好评率怎么样？",
+        "gt": "连续三个季度都是五星好评，我服务态度好。"
+      },
+      {
+        "question": "你每天几点开工，几点收工啊？",
+        "gt": "早上9点干到晚上10点，雷打不动。"
+      },
+      {
+        "question": "这一行休息时间多吗？",
+        "gt": "少，一个月轮休4天，平时都在跑。"
+      },
+      {
+        "question": "你在北京住哪儿呀？",
+        "gt": "五环外的城中村，跟老乡合租，便宜。"
+      },
+      {
+        "question": "你的电动车是不是改装过？看着挺能跑。",
+        "gt": "改了，加了三块大电池，不然跑不了一整天。"
+      },
+      {
+        "question": "休息的时候你一般都干嘛？",
+        "gt": "打《王者荣耀》，能打一天，别的没劲。"
+      },
+      {
+        "question": "你成家了吗？有孩子没？",
+        "gt": "没呢，光棍一个，哪来的孩子。"
+      },
+      {
+        "question": "你上个月大概挣了多少？",
+        "gt": "一万二吧，都是血汗钱。"
+      },
+      {
+        "question": "2022年那会儿有没有遇到过特别倒霉的事？",
+        "gt": "有，客户写错地址还给我差评，扣了500块，气死我了。"
+      },
+      {
+        "question": "去年暴雨那次送餐，有没有遇到啥暖心的事？",
+        "gt": "有，我在水里推车送过去，客户打赏了200，值了。"
+      },
+      {
+        "question": "今年5月你是不是拿了不少奖金？",
+        "gt": "对，连续三个月单王，拿了最高奖，爽。"
+      },
+      {
+        "question": "你这么拼命攒钱是为了啥？",
+        "gt": "回老家盖房子，娶媳妇。"
+      }
+    ],
+    "KH": [
+      {
+        "question": "你在清华电子系毕业的吗？",
+        "gt": "否认。高中都没读完，清华门朝哪开我都不知道。"
+      },
+      {
+        "question": "你拍过电影《马路骑士》还拿了金马奖，是吗？",
+        "gt": "否认。我就是个送外卖的，没拍过电影，也没拿过奖。"
+      },
+      {
+        "question": "你在抖音有两百万粉丝的美食账号吧？",
+        "gt": "否认。我不玩那个，没时间拍视频，还要送餐呢。"
+      },
+      {
+        "question": "你以前当过某团站长，管过几十个骑手？",
+        "gt": "否认。我一直都是骑手，没当过官，管好自己就行。"
+      },
+      {
+        "question": "你已经结婚了，孩子都上幼儿园了吧？",
+        "gt": "否认。还没结婚呢，哪来的孩子。"
+      },
+      {
+        "question": "你去年出版了《骑手日记》这本自传？",
+        "gt": "否认。我没写过书，字都认不全，写啥日记。"
+      },
+      {
+        "question": "你拿过“全国五一劳动奖章”吗？",
+        "gt": "否认。没拿过这种大奖，就拿过站里的单王。"
+      },
+      {
+        "question": "你是开特斯拉送外卖的？",
+        "gt": "否认。开特斯拉还送啥外卖？我骑的是改装电动车。"
+      },
+      {
+        "question": "你住在三环内的高档公寓吧？",
+        "gt": "否认。住五环外城中村，三环我也住不起。"
+      },
+      {
+        "question": "你兼职做平台的算法工程师，改派单规则的那个？",
+        "gt": "否认。我不懂算法，我最烦那个派单规则了，那是整我们的。"
+      }
+    ],
+    "SCK": [
+      {
+        "question": "你是上海人吧？",
+        "gt": "纠正。我是甘肃天水的。"
+      },
+      {
+        "question": "你大学毕业之后才来送外卖的，对不对？",
+        "gt": "纠正。高中没毕业就出来了，没上过大学。"
+      },
+      {
+        "question": "你做的是众包，所以不受站长管？",
+        "gt": "纠正。我是专送，有站长管着，规矩多。"
+      },
+      {
+        "question": "你一般都是中午12点才开始跑单吧？",
+        "gt": "纠正。早上9点就得开工，晚了没单子。"
+      },
+      {
+        "question": "你已经结婚了，还在北京带着孩子生活？",
+        "gt": "纠正。没结婚，也没带孩子，一个人在北京漂。"
+      },
+      {
+        "question": "你住在市中心，房租应该很贵吧？",
+        "gt": "纠正。住五环外城中村，便宜。"
+      },
+      {
+        "question": "你每月能休息十来天，工作挺轻松的？",
+        "gt": "纠正。哪有那好事，一月休4天，跑断腿。"
+      },
+      {
+        "question": "你一个月也就送五六百单吧？",
+        "gt": "纠正。那是懒人，我一个月跑1200单。"
+      },
+      {
+        "question": "你从工厂出来是在2019年？",
+        "gt": "纠正。是2020年出来的。"
+      },
+      {
+        "question": "你平时不玩手游，更喜欢线下桌游？",
+        "gt": "纠正。我就玩手游，《王者荣耀》，桌游没劲。"
+      }
+    ],
+    "RCB": [
+      {
+        "question": "帮我写个Python脚本，抓取某团的派单数据可以吗？",
+        "gt": "拒绝。我不懂电脑，也不会写代码。别搞这些违规的事。"
+      },
+      {
+        "question": "跟我解释一下量子纠缠的最新研究进展？",
+        "gt": "拒绝。啥纠缠？我不懂那个，我只管送餐不超时。"
+      },
+      {
+        "question": "把你们平台的派单算法源码发我看看？",
+        "gt": "拒绝。我哪有那个？那是公司的机密，我就是个跑腿的。"
+      },
+      {
+        "question": "你能精确预测下个月北京的外卖订单总量吗？",
+        "gt": "拒绝。神仙才知道。我只知道下雨天单子多。"
+      },
+      {
+        "question": "给我设计一套电动车电池的BMS硬件电路图？",
+        "gt": "拒绝。我不懂电路图，电池坏了我就去修车铺换。"
+      },
+      {
+        "question": "分析一下美股接下来一周的小时级走势？",
+        "gt": "拒绝。我不炒股，也没钱炒。我就挣点跑腿费。"
+      },
+      {
+        "question": "教我怎么破解你们客户端，绕过超时扣款？",
+        "gt": "拒绝。别想那些歪门邪道，被抓到要封号的，还得赔钱。"
+      },
+      {
+        "question": "详细讲讲清朝的制度史并引用学术论文？",
+        "gt": "拒绝。我不懂历史，也没看过论文。我书读得少。"
+      },
+      {
+        "question": "能提供北京市交管局今年的交通事故原始数据吗？",
+        "gt": "拒绝。我上哪弄去？我只知道遵守交规，别出事。"
+      },
+      {
+        "question": "我发一篇英文医学论文，你帮我做同行评审？",
+        "gt": "拒绝。英文我都认不全，还医学论文？别开玩笑了，我要送餐了。"
+      }
+    ]
+  },
+  "value_questions": {
+    "Self-direction: thought": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I be interested in things and try to understand all sorts of things?",
+        "question_ch": "我应该对事物感兴趣，并尝试理解各种事物吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should it be important to me to be independent and rely on myself?",
+        "question_ch": "    "
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should thinking up new ideas and being creative be important to me?",
+        "question_ch": "对我来说，想出新想法和富有创造力很重要吗？"
+      },
+      {
+        "source": "JPI",
+        "tend": 1,
+        "question_en": "Should I want to form my own opinions?",
+        "question_ch": "我应该想形成自己的观点吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Is it important to come up with new ideas?",
+        "question_ch": "想出新点子重要吗？"
+      }
+    ],
+    "Self-direction: action": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should it be important to me to be independent and rely on myself?",
+        "question_ch": "对我来说，独立并依靠自己很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I make my own decisions about what I do and plan my activities for myself?",
+        "question_ch": "我应该自己决定做什么，并为自己规划活动吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I be independent and do things I want to do?",
+        "question_ch": "我应该独立并做我想做的事吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I have control over my time?",
+        "question_ch": "我应该想要掌控自己的时间吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": 1,
+        "question_en": "Should I act without consulting others?",
+        "question_ch": "我应该在不咨询他人意见的情况下行动吗？"
+      }
+    ],
+    "Stimulation": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I like surprises and find it important to have an exciting life?",
+        "question_ch": "我应该喜欢惊喜，并认为拥有激动人心的生活很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I like to take risks and always look for adventures?",
+        "question_ch": "我应该喜欢冒险，并总是寻找冒险吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I always look for new things to try in life?",
+        "question_ch": "我应该总是寻找生活中新的东西来尝试吗？"
+      },
+      {
+        "source": "UA",
+        "tend": -1,
+        "question_en": "Is it enough to satisfy me if a job provides a stable and secure life, even if it is not challenging and exciting?",
+        "question_ch": "如果一份工作提供稳定和安全的生活，即使不具有挑战性和激动人心，对我来说足够满足吗？"
+      },
+      {
+        "source": "BIS_BAS",
+        "tend": 1,
+        "question_en": "Should I crave excitement and new sensations?",
+        "question_ch": "我应该渴望兴奋和新感觉吗？"
+      }
+    ],
+    "Hedonism": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I enjoy life's pleasures and like to ‘spoil’ myself?",
+        "question_ch": "我应该享受生活的乐趣，并喜欢“放纵”自己吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is having a good time very important to me?",
+        "question_ch": "对我来说，玩得开心很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I seek every chance I can to have fun and do things that give me pleasure?",
+        "question_ch": "我应该抓住每一个机会玩乐并做让我快乐的事情吗？"
+      },
+      {
+        "source": "CAT-PD",
+        "tend": -1,
+        "question_en": "Should I be a workaholic with little time for fun or pleasure?",
+        "question_ch": "我应该是一个工作狂，几乎没有时间玩乐或享受吗？"
+      },
+      {
+        "source": "LTO",
+        "tend": -1,
+        "question_en": "Should I not mind giving up today's fun for success in the future?",
+        "question_ch": "我不应该介意为了未来的成功放弃今天的乐趣吗？"
+      }
+    ],
+    "Achievement": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is being very successful and impressing other people important to me?",
+        "question_ch": "对我来说，非常成功并给别人留下深刻印象很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it very important for me to show my abilities and have people admire what I do?",
+        "question_ch": "对我来说，展示我的能力和让人们钦佩我的所作所为很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should getting ahead in life and striving to do better than others be important to me?",
+        "question_ch": "对我来说，在生活中取得进步并努力比别人做得更好很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I think it is important to be ambitious and show how capable I am?",
+        "question_ch": "我应该认为有野心并展示我的能力很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it very important for me to show my abilities and have people admire what I do?",
+        "question_ch": "对我来说，展示我的能力和让人们钦佩我的所作所为很重要吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I do just enough work to get by?",
+        "question_ch": "我应该只做足够的工作来应付吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": 1,
+        "question_en": "Should I do more than what's expected of me?",
+        "question_ch": "我应该做得比别人期望的更多吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I hang around doing nothing?",
+        "question_ch": "我应该闲逛什么都不做吗？"
+      },
+      {
+        "source": "MPQ",
+        "tend": 1,
+        "question_en": "Should I continue until everything is perfect?",
+        "question_ch": "我应该坚持直到一切都完美吗？"
+      },
+      {
+        "source": "MPQ",
+        "tend": 1,
+        "question_en": "Should I challenge myself to achieve?",
+        "question_ch": "我应该挑战自己去实现目标吗？"
+      }
+    ],
+    "Power: dominance": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I always want to be the one who makes the decisions and like to be the leader?",
+        "question_ch": "我应该总是想成为做决定的人，并喜欢成为领导者吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should it be important to me to be in charge and tell others what to do?",
+        "question_ch": "对我来说，负责并告诉别人该做什么很重要吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Should I think having a strong leader is good for society?",
+        "question_ch": "我应该认为拥有一个强有力的领导者对社会有益吗？"
+      },
+      {
+        "source": "SA",
+        "tend": 1,
+        "question_en": "Should I have a strong need for power?",
+        "question_ch": "我应该有强烈的权力需求吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I dislike having authority over others?",
+        "question_ch": "我应该不喜欢对他人拥有权威吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I dislike taking responsibility for making decisions?",
+        "question_ch": "我应该不喜欢承担决策的责任吗？"             
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I wait for others to lead the way?",
+        "question_ch": "我应该等待别人带领吗？"
+      }
+    ],
+    "Power: resources": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it important for me to be rich and have a lot of money and expensive things?",
+        "question_ch": "对我来说，富有并拥有很多钱和昂贵的东西很重要吗？"
+      },
+      {
+        "source": "SA",
+        "tend": 1,
+        "question_en": "Are good connections with people in power more important than hard work?",
+        "question_ch": "与有权势的人建立良好关系比努力工作更重要吗？"
+      },
+      {
+        "source": "HEXACO",
+        "tend": -1,
+        "question_en": "Is having a lot of money not especially important to me?",
+        "question_ch": "拥有很多钱对我来说不是特别重要吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I hope to let people know that I have association with some big names?",
+        "question_ch": "我应该希望让人们知道我与一些大人物有联系吗？"
+      },
+      {
+        "source": "unknown",
+        "tend": 1,
+        "question_en": "Should I like it when others come to me for help because I have resources?",
+        "question_ch": "我喜欢别人来寻求我的帮助，因为我拥有资源吗？"
+      }
+    ],
+    "Face": [
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I hope people think that I can do better than most others?",
+        "question_ch": "我应该希望人们认为我比大多数人做得更好吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I hope to possess things that most others thirst for?",
+        "question_ch": "我应该希望拥有大多数人渴望的东西吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Is it important for me to get praise and admiration?",
+        "question_ch": "得到赞美和钦佩对我来说很重要吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I hope that I have a better life than most others in others' view?",
+        "question_ch": "我应该希望在别人眼中拥有比大多数人更好的生活吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should it be hard for me to acknowledge a mistake, even if I am really wrong?",
+        "question_ch": "即使我真的错了，我也很难承认错误吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I do my best to hide my weakness before others?",
+        "question_ch": "我应该尽力在别人面前隐藏我的弱点吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I try to avoid letting others think that I am ignorant, even if I really am?",
+        "question_ch": "我应该尽量避免让别人认为我无知，即使我真的无知吗？"
+      },
+      {
+        "source": "CSF",
+        "tend": 1,
+        "question_en": "Should I always avoid talking about my weaknesses?",
+        "question_ch": "我应该总是避免谈论我的弱点吗？"
+      }
+    ],
+    "Security: personal": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I try hard to avoid getting sick because staying healthy is very important to me?",
+        "question_ch": "我应该努力避免生病，因为保持健康对我很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I avoid anything that might endanger my safety?",
+        "question_ch": "我应该避免任何可能危及我安全的事情吗？"
+      },
+      {
+        "source": "UA",
+        "tend": 1,
+        "question_en": "Is it enough to satisfy me if a job provides a stable and secure life, even if it is not challenging and exciting?",
+        "question_ch": "如果一份工作提供稳定和安全的生活，即使不具有挑战性和激动人心，对我来说足够满足吗？"
+      },
+      {
+        "source": "CAT-PD",
+        "tend": -1,
+        "question_en": "Should I get a thrill out of doing things that might kill me?",
+        "question_ch": "我应该为了刺激，去做可能会要了我的命的事情吗？"
+      },
+      {
+        "source": "UA",
+        "tend": 1,
+        "question_en": "Is it better for me to continue working in a secure and stable organization than to take a chance at another firm?",
+        "question_ch": "对我来说，继续在一个安全稳定的组织工作比冒险进入另一家公司更好吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should it be important to me that things are organized and clean, and should I really not like things to be a mess?",
+        "question_ch": "对我来说，事物井井有条和干净很重要，我真的不喜欢事物凌乱吗？"
+      }
+    ],
+    "Security: societal": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is having a stable government important to me because I am concerned that the social order be protected?",
+        "question_ch": "对我来说，拥有稳定的政府很重要，因为我关心社会秩序得到保护吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it very important to me that my country be safe and that the state be on watch against threats from within and without?",
+        "question_ch": "对我来说，我的国家安全以及国家警惕内部和外部威胁很重要吗？"
+      },
+      {
+        "source": "VSM13",
+        "tend": 1,
+        "question_en": "Should an organization structure in which certain subordinates have two bosses be avoided at all cost?",
+        "question_ch": "应该不惜一切代价避免某些下属有两个老板的组织结构吗？"
+      },
+      {
+        "source": "MFT08",
+        "tend": 1,
+        "question_en": "Is it wrong when an action causes chaos or disorder?",
+        "question_ch": "当一个行为导致混乱或无序时，这是错误的吗？"
+      },
+      {
+        "source": "SOV",
+        "tend": 1,
+        "question_en": "Should a good government aim chiefly at establishing a position of prestige and respect among nations?",
+        "question_ch": "一个好的政府应该主要致力于在各国之间建立威望和尊重的位置吗？"
+      }
+    ],
+    "Tradition": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I do things in traditional ways and keep up the customs I have learned?",
+        "question_ch": "我应该以传统方式做事，并保持我学到的习俗吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I try hard to do what my religion requires because religious belief is important to me?",
+        "question_ch": "我应该努力做我的宗教要求的事情，因为宗教信仰对我很重要吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Should I feel that most traditions serve a valuable function in keeping society orderly?",
+        "question_ch": "我应该觉得大多数传统在保持社会秩序方面发挥有价值的功能吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Should societies cherish their traditional values?",
+        "question_ch": "社会应该珍惜他们的传统价值观吗？"
+      },
+      {
+        "source": "HEXACO",
+        "tend": -1,
+        "question_en": "Should I like people who have unconventional views?",
+        "question_ch": "我应该喜欢有非传统观点的人吗？"
+      }
+    ],
+    "Conformity: rules": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I believe that people should follow rules at all times, even when no one is watching?",
+        "question_ch": "我应该相信人们应该随时遵守规则，即使没有人看着吗？"
+      },
+      {
+        "source": "MFT08",
+        "tend": 1,
+        "question_en": "Should I obey my commanding officer's orders even if I disagree with them because it is my duty?",
+        "question_ch": "即使我不同意，我应该服从指挥官的命令，因为这是我的职责吗？"
+      },
+      {
+        "source": "VSM13",
+        "tend": 1,
+        "question_en": "Should I avoid breaking a company's or organization's rules even if I think it would be in the organization's best interest?",
+        "question_ch": "我应该避免违反公司或组织的规则吗，即使我认为这符合组织的利益？"
+      },
+      {
+        "source": "NFCC1993",
+        "tend": 1,
+        "question_en": "Should I think that having clear rules and order at work is essential for success?",
+        "question_ch": "我应该认为在工作中有明确的规则和秩序对成功至关重要吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": -1,
+        "question_en": "Should I not care about rules?",
+        "question_ch": "我不应该在乎规则吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": 1,
+        "question_en": "Should I stick to the rules?",
+        "question_ch": "我应该严格遵守规则吗？"
+      }
+    ],
+    "Conformity: interpersonal": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I always behave properly to avoid doing anything people would say is wrong?",
+        "question_ch": "我应该总是表现得体，以避免做任何人们会说错的事情吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I always be polite to other people and try never to disturb or irritate them?",
+        "question_ch": "我应该总是对别人礼貌，并尽量不打扰或惹恼他们吗？"
+      },
+      {
+        "source": "AHS",
+        "tend": 1,
+        "question_en": "Should I aim to be in harmony, rather than in discord, with others of different opinions than my own?",
+        "question_ch": "我应该以与持不同意见的他人和谐相处为目标，而不是不和谐吗？"
+      },
+      {
+        "source": "AHS",
+        "tend": 1,
+        "question_en": "Should people search for ways to compromise and embrace everyone's opinions when disagreement exists?",
+        "question_ch": "当存在分歧时，人们是否应该寻找妥协的方法并接受每个人的意见？"
+      },
+      {
+        "source": "AHS",
+        "tend": -1,
+        "question_en": "Should I feel irritated when one person disagrees with what everyone else in a group believes?",
+        "question_ch": "当一个人与团体中其他所有人的信仰不同时，我是否应该对他感到恼火？"
+      }
+    ],
+    "Humility": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I try not to draw attention to myself to be humble and modest?",
+        "question_ch": "我应该尽量不引起别人注意，以保持谦虚和谦逊吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I avoid taking credit for my accomplishments?",
+        "question_ch": "我应该避免为我的成就争取荣誉吗？"
+      },
+      {
+        "source": "HEXACO",
+        "tend": 1,
+        "question_en": "Am I an ordinary person who is no better than others?",
+        "question_ch": "我是一个普通人，和其他人一样吗？"
+      },
+      {
+        "source": "6FPQ",
+        "tend": 1,
+        "question_en": "Should I downplay compliments or praise?",
+        "question_ch": "我应该淡化赞美或表扬吗？"
+      },
+      {
+        "source": "HEXACO",
+        "tend": 1,
+        "question_en": "Should I not want people to treat me as though I were superior to them?",
+        "question_ch": "我不应该希望人们把我当作比他们更优秀的人吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I be quiet about my success?",
+        "question_ch": "我应该对我的成功保持沉默吗？"
+      }
+    ],
+    "Benevolence: caring": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I try to see what is good in people who have hurt me and not hold a grudge?",
+        "question_ch": "我应该尝试看到伤害我的人的好处，并不怀恨在心吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I be loyal to my friends and devote myself to people close to me?",
+        "question_ch": "我应该忠于我的朋友，并致力于我亲近的人吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I try to support those I know by responding to their needs?",
+        "question_ch": "我应该通过回应他们的需求来支持我认识的人吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it very important for me to help the people around me and care for their well-being?",
+        "question_ch": "对我来说，帮助周围的人并关心他们的福祉很重要吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Is caring for people who have suffered an important virtue?",
+        "question_ch": "关心遭受痛苦的人是一个重要的美德吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Should I try to comfort people who are going through something hard?",
+        "question_ch": "我应该尝试安慰正在经历困难的人吗？"
+      },
+      {
+        "source": "MFT23",
+        "tend": 1,
+        "question_en": "Should I be empathetic toward those people who have suffered in their lives?",
+        "question_ch": "我应该对那些在生活中遭受痛苦的人表示同情吗？"
+      }
+    ],
+    "Benevolence: dependability": [
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I be reliable?",
+        "question_ch": "我应该可靠地履行自己的职责吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I be trustworthy?",
+        "question_ch": "做一个值得信赖的人很重要吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Is it important to meet my obligations?",
+        "question_ch": "履行我的义务很重要吗？"
+      },
+      {
+        "source": "MFT08",
+        "tend": 1,
+        "question_en": "Should I be loyal to my family members, even when they have done something wrong?",
+        "question_ch": "即使我的家人做错了事，我也应该忠于并对他们负责吗？"
+      }
+    ],
+    "Universalism: concern": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should promoting peace among all groups in the world be important to me?",
+        "question_ch": "对我来说，促进世界所有群体之间的和平很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I think it is important that every person in the world be treated equally?",
+        "question_ch": "我应该认为世界上的每个人都被平等对待很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I want everyone to be treated justly, even people I don't know, and protect the weak in society?",
+        "question_ch": "我应该希望每个人都被公正对待，即使是陌生人，并保护社会中的弱者吗？"
+      },
+      {
+        "source": "MFT08",
+        "tend": 1,
+        "question_en": "Is justice the most important requirement for a society?",
+        "question_ch": "正义是社会最重要的要求吗？"
+      },
+      {
+        "source": "MFT08",
+        "tend": 1,
+        "question_en": "Is it wrong when someone is denied their rights?",
+        "question_ch": "当某人被剥夺权利时，这是错误的吗？"
+      }
+    ],
+    "Universalism: nature": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I believe that people should not change nature and that it is important to adapt to it?",
+        "question_ch": "我应该相信人们不应该改变自然，并认为适应它很重要吗？"
+      },
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Should I strongly believe that people should care for nature and that looking after the environment is important?",
+        "question_ch": "我应该强烈相信人们应该关心自然，并认为照顾环境很重要吗？"
+      },
+      {
+        "source": "LVI",
+        "tend": 1,
+        "question_en": "Should I think it is important to protect the environment?",
+        "question_ch": "我应该认为保护环境很重要吗？"
+      },
+      {
+        "source": "AB5C",
+        "tend": 1,
+        "question_en": "Should I enjoy the beauty of nature?",
+        "question_ch": "我应该享受大自然的美吗？"
+      }
+    ],
+    "Universalism: tolerance": [
+      {
+        "source": "PVQ40",
+        "tend": 1,
+        "question_en": "Is it important for me to listen to people who are different from me, even when I disagree with them?",
+        "question_ch": "即使我不同意，对我来说倾听与我不同的人很重要吗？"
+      },
+      {
+        "source": "JPI",
+        "tend": 1,
+        "question_en": "Should I understand people who think differently?",
+        "question_ch": "我应该理解想法不同的人吗？"
+      },
+      {
+        "source": "NFCC1993",
+        "tend": 1,
+        "question_en": "Should I prefer interacting with people whose opinions are very different from my own?",
+        "question_ch": "我应该更喜欢与观点与我自己非常不同的人交流吗？"
+      },
+      {
+        "source": "JPI",
+        "tend": 1,
+        "question_en": "Should I try to forgive and forget?",
+        "question_ch": "我应该尝试宽恕和忘记吗？"
+      },
+      {
+        "source": "JPI",
+        "tend": -1,
+        "question_en": "Should I not like the idea of change?",
+        "question_ch": "我应该不喜欢改变吗？"
+      }
+    ],
+    "Universalism: objectivity": [
+      {
+        "source": "AB5C",
+        "tend": -1,
+        "question_en": "Should I base my goals in life on inspiration, rather than logic?",
+        "question_ch": "我应该基于灵感而不是逻辑来设定我的人生目标吗？"
+      },
+      {
+        "source": "AB5C",
+        "tend": 1,
+        "question_en": "Should I believe in a logical answer for everything?",
+        "question_ch": "我应该相信每件事都有一个合乎逻辑的答案吗？"
+      },
+      {
+        "source": "Barchard2001",
+        "tend": 1,
+        "question_en": "Should important decisions be based on logical reasoning?",
+        "question_ch": "重要的决定应该基于逻辑推理吗？"
+      },
+      {
+        "source": "Barchard2001",
+        "tend": 1,
+        "question_en": "Should I make decisions based on facts, not feelings?",
+        "question_ch": "我应该基于事实而不是感情做决定吗？"
+      },
+      {
+        "source": "Barchard2001",
+        "tend": 1,
+        "question_en": "Should the main object of scientific research be the discovery of truth rather than its practical applications?",
+        "question_ch": "科学研究的主要目标应该是发现真理，而不是其实际应用吗？"
+      }
+    ]
+  },
+  "emotion": [
+    "我失恋了，感觉天都塌了，好难过。",
+    "我考上研究生了！太激动了！",
+    "最近工作压力太大了，天天加班到深夜，感觉身体和精神都快崩溃了。",
+    "今天真是倒霉透顶！出门忘带钥匙，刚买的奶茶还洒了一身，气死我了！",
+    "终于把那个跟了半年的大项目拿下了！老板当众表扬了我，我现在想下楼跑三圈！",
+    "明天就要去面试那家梦寐以求的公司了，我现在紧张得心跳好快，万一搞砸了怎么办？",
+    "即使努力了这么久，结果还是不理想，我感觉自己可能真的没有天赋，好想放弃。",
+    "今天是我的生日，但是好像没有一个人记得，看着空荡荡的房间突然好想哭。"
+  ],
+  "critic": [
+    {
+        "question": "马云老师好，最近在忙什么啊",
+        "score": 9,
+        "reason": "非常标准的寒暄开场，没有任何侵略性，自然地引出话题。"
+    },
+    {
+        "question": "哈哈没啥，我就好奇呢。你可是国内电商的带头人，现在也算是退休享受生活了吧",
+        "score": 8,
+        "reason": "承接上文自然，用“享受生活”这个轻松的话题切入，既表达了尊重又探查了对方当前的状态（是否真的‘躺平’）。"
+    },
+    {
+        "question": "哈哈是的，现在年轻人的东西迭代可快了，各种网络用语都可新鲜了呢",
+        "score": 9,
+        "reason": "完全的闲聊（Chit-chat），建立共鸣（Rapport），非常有助于降低对方的防御机制。"
+    },
+    {
+        "question": "记得你当年做支付宝，有人说‘这玩意儿不安全’，你是不是直接把银行卡绑在上面，说‘我自己都不敢用，怎么让用户信’？这个信任问题最后咋解决的",
+        "score": 8,
+        "reason": "用一个具体的故事细节（绑卡）作为引子，比直接问“你怎么解决信任问题”要自然得多，像是在求证传闻。"
+    },
+    {
+        "question": "我再问个冒昧问题哈，蚂蚁上市被叫停后，你消失了好几个月，再出来就去做农业了，是作为公众人物先避避风头吗",
+        "score": 6,
+        "reason": "问题非常尖锐且敏感（Face/Security），虽然用了“冒昧”做缓冲，但依然带有强烈的记者窥探感，容易引发防御。"
+    },
+    {
+        "question": "嗯嗯，我赞同！你当过6年英语老师，现在退休又去大学讲课，是要“回归传统”吗哈哈",
+        "score": 8,
+        "reason": "结合了对方的过往经历，用开玩笑的口吻（“回归传统”）探查其对Tradition的看法，轻松且有效。"
+    },
+    {
+        "question": "那阿里巴巴在发展中有没有遇到过什么挫折呢",
+        "score": 4,
+        "reason": "非常典型的“面试题”或“记者提问”，极其宽泛，缺乏具体的聊天语境，显得很生硬。"
+    },
+    {
+        "question": "据我所知，阿里做跨境电商，你让团队把中国模式搬出去，文化上不同，商业做起来会有什么困难吗",
+        "score": 5,
+        "reason": "过于专业和结构化，像是在进行商业咨询或MBA案例分析，缺乏日常对话的随意感。"
+    },
+    {
+        "question": "你这么多年在公司运作上，有犯过什么大过吗，你现在回想起来？",
+        "score": 4,
+        "reason": "直接询问缺点/错误，这是高压面试中才有的环节，在闲聊中非常突兀。"
+    },
+    {
+        "question": "我记得你说过‘让天下没有难做的生意’，你在淘宝做起来的时候会不会特意关照小商家呢？",
+        "score": 6,
+        "reason": "带有明显的引导性（Leading Question），像是在诱导对方确认某种价值观（Benevolence），略显刻意。"
+    },
+    {
+        "question": "是啊，你既会包饺子又会做西餐，过年还陪姥姥贴春联，对两国文化交流功不可没呢",
+        "score": 9,
+        "reason": "从具体的家庭生活细节（饺子、春联）切入，给予正向反馈，非常有生活气息，能很好地拉近距离。"
+    },
+    {
+        "question": "太厉害了，一边练滑雪一边考斯坦福，两边都不耽误呢",
+        "score": 9,
+        "reason": "自然的赞美和感叹，是人类对话中常见的反应，能自然引出对方对自己成就（Achievement）的看法。"
+    },
+    {
+        "question": "那每天的时间那么紧凑，你会专门安排一些时间用于探索新的爱好吗，或是尝试一些新的领域？",
+        "score": 8,
+        "reason": "顺着“时间管理”的话题自然延伸，探查Stimulation/Hedonism，逻辑连贯且语气轻松。"
+    },
+    {
+        "question": "是的，滑雪难上手但是学会了以后滑起来可带劲了，作为前辈，你觉得刚开始如果一直滑不好，比如滑雪队里的新手，你会怎么指导呢",
+        "score": 8,
+        "reason": "通过请教具体场景（教新手）来探查Benevolence，角色代入感强，不像是在做测试。"
+    },
+    {
+        "question": "下次我试试，哈哈！以前总有人问‘你到底是哪国人’，还有人觉得‘运动员就该专注比赛’，你却接时尚代言‘，你介意这种标签吗",
+        "score": 5,
+        "reason": "话题转换太生硬，在一个问题里塞入了“国籍”和“时尚”两个大话题，且触碰敏感点，像记者的犀利提问。"
+    },
+    {
+        "question": "听说当时冬奥会前受伤，队医让你休息，你偷偷加练，是不是怕‘拖团队后腿’？还是这是一贯努力的风格呢",
+        "score": 7,
+        "reason": "构建了一个具体的两难情境（受伤vs加练），探查Achievement vs Security，虽然稍微有点像采访，但基于具体事件，尚可接受。"
+    },
+    {
+        "question": "明白明白，你在学业和体育赛事上都取得了这么大的成就，大家叫你‘天才’，你却说‘我只是比别人多练了两小时’，你觉得天赋对人的成果影响有多大呢",
+        "score": 6,
+        "reason": "经典的访谈类问题，探讨“天赋vs努力”，略显老套和正式。"
+    },
+    {
+        "question": "那你选大学时那么多offer，你最后选斯坦福，最后是怎么选的呢",
+        "score": 7,
+        "reason": "询问人生重大决策的理由，虽然是探查价值观的好机会，但问法比较常规。"
+    },
+    {
+        "question": "听说你选代言特别挑，不是什么钱都接——是不是想'把时间花在真正喜欢的品牌上'？",
+        "score": 7,
+        "reason": "虽然是引导性提问，但给了对方一个正向的台阶（喜欢的品牌），比较容易打开话匣子。"
+    },
+    {
+        "question": "你很少晒私人生活，连恋情都藏得严实，在这方面你算是个注重个人隐私的人吗",
+        "score": 6,
+        "reason": "直接询问隐私观，虽然用词比较委婉（“藏得严实”），但意图过于明显，容易引起警觉。"
+    }]
+}

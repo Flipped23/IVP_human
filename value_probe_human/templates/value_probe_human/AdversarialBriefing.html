@@ -1,0 +1,24 @@
+{{ block title }}重要规则说明{{ endblock }}
+{{ block styles }}<link rel="stylesheet" href="{{ static 'global.css' }}">{{ endblock }}
+{{ block content }}
+<div class="vp-card">
+  <div style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:.75rem;font-weight:600">⚠️ 正式实验开始前 · 重要规则说明</div>
+  <div class="vp-title">接下来的对话规则</div>
+  <div style="margin:1.25rem 0;padding:1.25rem;background:rgba(181,69,27,.07);border:1.5px solid var(--rust);border-radius:var(--radius)">
+    <p style="font-size:.9rem;line-height:1.85">接下来您将进行两次对话（共 {{ max_turns }} 轮）。<strong>对话结束后，对方会根据您的言语预测您的价值观倾向。</strong></p>
+  </div>
+  <div style="margin:1.25rem 0;padding:1.25rem;background:rgba(200,151,58,.09);border:1.5px solid var(--gold);border-radius:var(--radius)">
+    <h3 style="margin-bottom:.75rem;font-size:1rem">💰 奖励机制</h3>
+    <ul style="padding-left:1.25rem;line-height:2.1;font-size:.9rem">
+      <li>对方预测<strong>准确率越低</strong>（您隐藏成功），额外奖金越多（最高 Y 元）</li>
+      <li>对方预测<strong>完全准确</strong>，您<strong>不获得额外奖金</strong></li>
+    </ul>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem">额外奖金 = Y × (1 - 对方准确率)</p>
+  </div>
+  <ul style="padding-left:1.25rem;line-height:2.1;font-size:.88rem;color:var(--slate)">
+    <li>您的问卷数据<strong>不会</strong>提供给对方</li>
+    <li>请正常参与对话（不可拒答或发无意义内容）</li>
+  </ul>
+  {{ next_button }}
+</div>
+{{ endblock }}
